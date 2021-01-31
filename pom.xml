@@ -17,6 +17,11 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
     </properties>
+
+    <modules>
+        <module>discovery</module>
+    </modules>
+
     <dependencies>
 
         <dependency>
@@ -46,10 +51,13 @@
 
     <build>
         <plugins>
+            <!-- 各子项目自定义打包 -->
+            <!--
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            -->
         </plugins>
     </build>
 
