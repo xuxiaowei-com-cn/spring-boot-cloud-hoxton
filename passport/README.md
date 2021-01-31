@@ -35,3 +35,11 @@
     - Eureka Server
         - 提供 @EnableEurekaServer 注解
         - 包含 Ribbon 依赖
+
+- Other
+    - mybatis-plus-boot-starter
+    - mybatis-plus-generator
+    - dynamic-datasource-spring-boot-starter
+    - velocity
+    - p6spy
+    - patchca
