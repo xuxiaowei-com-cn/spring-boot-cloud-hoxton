@@ -10,6 +10,14 @@ npm init @vitejs/app cloud-admin-vue --template vue
 
 ## dependencies
 
+- axios
+    - [TAONPM](https://developer.aliyun.com/mirror/npm/package/axios)
+    - [GitHub](https://github.com/axios/axios)
+
+~~~
+npm i axios
+~~~
+
 - element-plus
     - [TAONPM](https://developer.aliyun.com/mirror/npm/package/element-plus)
     - [GitHub](https://github.com/element-plus/element-plus)
