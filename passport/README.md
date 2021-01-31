@@ -32,9 +32,8 @@
         - 提供读取配置服务器中的配置
 
 - Spring Cloud Discovery
-    - Eureka Server
-        - 提供 @EnableEurekaServer 注解
-        - 包含 Ribbon 依赖
+    - Enable Discovery Client
+        - 提供 @EnableEurekaClient 注解
 
 - Other
     - mybatis-plus-boot-starter
