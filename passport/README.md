@@ -26,6 +26,7 @@
 
 - Spring Cloud Security
     - Cloud Security
+    - Cloud OAuth2
 
 - Spring Cloud Config
     - Config Client
