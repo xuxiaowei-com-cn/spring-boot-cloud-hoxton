@@ -1,4 +1,5 @@
 import Home from '../views/home/index.vue'
+import { ElementPlus } from './demo'
 
 const routes = [
     {
@@ -14,6 +15,7 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "about" */ '../views/about/index.vue')
     },
+    ElementPlus,
 ]
 
 export default routes
