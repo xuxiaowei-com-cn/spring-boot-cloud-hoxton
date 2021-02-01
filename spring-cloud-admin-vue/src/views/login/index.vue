@@ -21,13 +21,15 @@
           <i class="el-icon-picture-outline input-icon"></i>
           <el-input type="text" v-model="loginForm.patchca" class="input-icon-left patchca" placeholder="请输入验证码"
                     :autocomplete="loginFormAutocomplete.patchca"></el-input>
-          <el-image class="patchca-img" :src="patchcaSrc" fit="fit" @click="patchcaClick()" alt="全自动区分计算机和人类的图灵测试">
-            <template #error>
-              <div class="image-slot" style="color: #c2c2c2; text-align: center">
-                图片加载失败
-              </div>
-            </template>
-          </el-image>
+          <div class="patchca-img" @click="patchcaClick()">
+            <el-image :src="patchcaSrc" fit="fit" alt="全自动区分计算机和人类的图灵测试">
+              <template #error>
+                <div class="image-slot" style="color: #c2c2c2; text-align: center">
+                  图片加载失败
+                </div>
+              </template>
+            </el-image>
+          </div>
         </el-form-item>
         <el-form-item>
           <el-checkbox v-model="loginForm.rememberMe">记住我</el-checkbox>
@@ -152,10 +154,14 @@ onMounted(() => {
 
         .patchca-img {
           float: right;
-          border: 1px solid #DCDFE6;
-          width: 120px;
-          height: calc(40px - 1px - 1px);
-          border-radius: 4px;
+          height: 40px;
+
+          .el-image {
+            border: 1px solid #DCDFE6;
+            width: 120px;
+            height: calc(40px - 1px - 1px);
+            border-radius: 4px;
+          }
         }
       }
     }
