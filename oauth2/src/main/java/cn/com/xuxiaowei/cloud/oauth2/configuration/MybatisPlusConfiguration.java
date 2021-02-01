@@ -17,10 +17,8 @@ package cn.com.xuxiaowei.cloud.oauth2.configuration;
 
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * Mybatis Plus 配置
@@ -33,8 +31,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @since 0.0.1
  */
 @Configuration
-@EnableTransactionManagement
-@MapperScan("cn.com.xuxiaowei.cloud.oauth2.*.mapper.**")
 public class MybatisPlusConfiguration {
 
     /**
