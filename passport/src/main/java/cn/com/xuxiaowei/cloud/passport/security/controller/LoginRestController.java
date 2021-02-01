@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 /**
  * 登录
  *
@@ -17,6 +19,38 @@ import java.util.Map;
 @RestController
 @RequestMapping("/login")
 public class LoginRestController {
+
+    /**
+     * 登录请求
+     * <p>
+     * Ajax
+     *
+     * @param request  请求
+     * @param response 响应
+     * @return 返回 登录请求 结果
+     */
+    @RequestMapping(produces = {APPLICATION_JSON_VALUE})
+    public Map<String, Object> json(HttpServletRequest request, HttpServletResponse response) {
+        Map<String, Object> map = new HashMap<>(4);
+        map.put("msg", "异常登录");
+        return map;
+    }
+
+    /**
+     * 登录页面
+     * <p>
+     * HTML（非 JSON）
+     *
+     * @param request  请求
+     * @param response 响应
+     * @return 返回 登录页面
+     */
+    @RequestMapping(produces = {"!" + APPLICATION_JSON_VALUE})
+    public Map<String, Object> html(HttpServletRequest request, HttpServletResponse response) {
+        Map<String, Object> map = new HashMap<>(4);
+        map.put("msg", "请在页面中登录");
+        return map;
+    }
 
     /**
      * 登录成功
