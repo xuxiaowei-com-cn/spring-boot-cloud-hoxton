@@ -36,21 +36,21 @@ public class ResourceServerConfigurerAdapterConfiguration extends ResourceServer
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry expressionInterceptUrlRegistry
                 = http.antMatcher("/**").authorizeRequests();
 
-        // 登录请求（POST）不需要登录
+        // 登录请求（POST）不需要Token
         AntPathRequestMatcher loginAnt = new AntPathRequestMatcher("/login", HttpMethod.POST.toString());
-        // 登录成功 不需要登录
+        // 登录成功 不需要Token
         AntPathRequestMatcher loginSuccessAnt = new AntPathRequestMatcher("/login/success");
-        // 登录失败 不需要登录
+        // 登录失败 不需要Token
         AntPathRequestMatcher loginFailureAnt = new AntPathRequestMatcher("/login/failure");
         expressionInterceptUrlRegistry.requestMatchers(loginAnt, loginSuccessAnt, loginFailureAnt).permitAll();
 
-        // 排除 登录请求（POST）的地址需要登录
+        // 排除 登录请求（POST）的地址 需要Token
         NegatedRequestMatcher loginNegated = new NegatedRequestMatcher(loginAnt);
-        // 排除 登录成功的地址需要登录
+        // 排除 登录成功的地址 需要Token
         NegatedRequestMatcher loginSuccessNegated = new NegatedRequestMatcher(loginSuccessAnt);
-        // 排除 登录失败的地址需要登录
+        // 排除 登录失败的地址 需要Token
         NegatedRequestMatcher loginFailureNegated = new NegatedRequestMatcher(loginFailureAnt);
-        // 其他路径需要登录
+        // 其他路径 需要Token
         expressionInterceptUrlRegistry.requestMatchers(loginNegated, loginSuccessNegated, loginFailureNegated)
                 .authenticated();
 
