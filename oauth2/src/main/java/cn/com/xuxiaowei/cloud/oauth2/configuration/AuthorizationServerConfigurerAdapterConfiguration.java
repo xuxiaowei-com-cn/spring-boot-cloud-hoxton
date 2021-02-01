@@ -22,7 +22,10 @@ import javax.sql.DataSource;
  *
  * @author xuxiaowei
  * @see <a href="http://localhost:10601/oauth/authorize?client_id=xuxiaowei_client&redirect_uri=http://127.0.0.1:123&response_type=code&scope=snsapi_base&state=beff3dfc-bad8-40db-b25f-e5459e3d6ad7">获取 code</a>
- * @see <a href="http://127.0.0.1:10601/oauth/token?code=DOPmKo&client_id=xuxiaowei_client&client_secret=123&redirect_uri=http://127.0.0.1:123&grant_type=authorization_code">获取 Token</a>
+ * @see <a href="http://localhost:10601/oauth/token?code=&client_id=xuxiaowei_client&client_secret=123&redirect_uri=http://127.0.0.1:123&grant_type=authorization_code">获取 Token</a>
+ * @see <a href="http://127.0.0.1:10601/oauth/token?code=&client_id=xuxiaowei_client&client_secret=123&redirect_uri=http://127.0.0.1:123&grant_type=authorization_code">获取 Token</a>
+ * @see <a href="http://localhost:10601/oauth/check_token?token=">检查 Token</a>
+ * @see <a href="http://127.0.0.1:10601/oauth/check_token?token=">检查 Token</a>
  * @since 0.0.1
  */
 @Configuration
