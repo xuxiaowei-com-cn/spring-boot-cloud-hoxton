@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -37,11 +37,6 @@ public class AuthorizationServerConfigurerAdapterConfiguration extends Authoriza
     private DataSource dataSource;
 
     /**
-     * 用户详细信息服务
-     */
-    private UserDetailsService userDetailsService;
-
-    /**
      * 认证管理器
      *
      * @see WebSecurityConfigurerAdapter 中的 authenticationManager()
@@ -51,11 +46,6 @@ public class AuthorizationServerConfigurerAdapterConfiguration extends Authoriza
     @Autowired
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
-    }
-
-    @Autowired
-    public void setUserDetailsService(UserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
     }
 
     @Autowired
@@ -95,7 +85,7 @@ public class AuthorizationServerConfigurerAdapterConfiguration extends Authoriza
         endpoints.allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
 
         // 用户详细信息服务
-        endpoints.userDetailsService(userDetailsService);
+        endpoints.userDetailsService(jdbcDaoImpl());
 
         // 认证管理器
         endpoints.authenticationManager(authenticationManager);
@@ -106,6 +96,15 @@ public class AuthorizationServerConfigurerAdapterConfiguration extends Authoriza
         // Token 持久化
         endpoints.tokenStore(new JdbcTokenStore(dataSource));
 
+    }
+
+    /**
+     * 刷新 Token 时查询用户
+     */
+    public JdbcDaoImpl jdbcDaoImpl() {
+        JdbcDaoImpl jdbcDao = new JdbcDaoImpl();
+        jdbcDao.setDataSource(dataSource);
+        return jdbcDao;
     }
 
 }
