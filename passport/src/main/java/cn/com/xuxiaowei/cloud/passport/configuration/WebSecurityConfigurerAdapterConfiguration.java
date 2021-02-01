@@ -1,6 +1,7 @@
 package cn.com.xuxiaowei.cloud.passport.configuration;
 
 import cn.com.xuxiaowei.cloud.passport.filter.CsrfCookieBeforeOncePerRequestFilter;
+import cn.com.xuxiaowei.cloud.passport.servlet.PatchcaHttpServlet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
@@ -74,6 +75,9 @@ public class WebSecurityConfigurerAdapterConfiguration extends WebSecurityConfig
                 .failureForwardUrl("/login/failure")
                 .permitAll()
         ;
+
+        // 全自动区分计算机和人类的图灵测试 不需要登录
+        http.authorizeRequests().antMatchers(PatchcaHttpServlet.URL).permitAll();
 
         // 权限配置
         http.authorizeRequests().anyRequest().authenticated();

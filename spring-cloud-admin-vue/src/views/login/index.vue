@@ -17,12 +17,11 @@
           <el-input type="password" v-model="loginForm.password" class="input-icon-left" placeholder="请输入密码"
                     :autocomplete="loginFormAutocomplete.password"></el-input>
         </el-form-item>
-        <!--
         <el-form-item prop="patchca">
           <i class="el-icon-picture-outline input-icon"></i>
           <el-input type="text" v-model="loginForm.patchca" class="input-icon-left patchca" placeholder="请输入验证码"
                     :autocomplete="loginFormAutocomplete.patchca"></el-input>
-          <el-image class="patchca-img" :src="patchcaSrc" fit="fit" @click="patchcaClick()" alt="图片验证码">
+          <el-image class="patchca-img" :src="patchcaSrc" fit="fit" @click="patchcaClick()" alt="全自动区分计算机和人类的图灵测试">
             <template #error>
               <div class="image-slot" style="color: #c2c2c2; text-align: center">
                 图片加载失败
@@ -30,7 +29,6 @@
             </template>
           </el-image>
         </el-form-item>
-        -->
         <el-form-item>
           <el-checkbox v-model="loginForm.rememberMe">记住我</el-checkbox>
           <el-link type="primary" target="_blank" :underline="false" href="#forget" class="forget">忘记密码？</el-link>
@@ -80,7 +78,7 @@ const loginRules = reactive({
 })
 
 /**
- * 更换图片验证码
+ * 更换全自动区分计算机和人类的图灵测试
  */
 function patchcaClick() {
   patchcaSrc.value = patchcaSrc.value.split('?')[0] + '?t=' + new Date().getTime()
