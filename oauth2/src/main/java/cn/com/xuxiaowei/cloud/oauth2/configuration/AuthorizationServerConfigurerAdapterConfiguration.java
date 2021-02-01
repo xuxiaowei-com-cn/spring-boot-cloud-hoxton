@@ -26,6 +26,7 @@ import javax.sql.DataSource;
  * @see <a href="http://127.0.0.1:10601/oauth/token?code=&client_id=xuxiaowei_client&client_secret=123&redirect_uri=http://127.0.0.1:123&grant_type=authorization_code">获取 Token</a>
  * @see <a href="http://localhost:10601/oauth/check_token?token=">检查 Token</a>
  * @see <a href="http://127.0.0.1:10601/oauth/check_token?token=">检查 Token</a>
+ * @see <a href="http://localhost:10601/oauth/token?refresh_token=&client_id=xuxiaowei_client&client_secret=123&grant_type=refresh_token">刷新 Token</a>
  * @since 0.0.1
  */
 @Configuration
