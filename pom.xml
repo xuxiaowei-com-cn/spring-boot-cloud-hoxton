@@ -34,6 +34,9 @@
         <!-- https://mvnrepository.com/artifact/com.github.bingoohuang/patchca -->
         <patchca.version>0.0.1</patchca.version>
 
+        <!-- 打包时跳过单元测试 -->
+        <skipTests>true</skipTests>
+
     </properties>
 
     <modules>
