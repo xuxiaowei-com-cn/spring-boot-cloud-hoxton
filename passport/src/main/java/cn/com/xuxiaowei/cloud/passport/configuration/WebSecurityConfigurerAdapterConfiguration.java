@@ -3,13 +3,10 @@ package cn.com.xuxiaowei.cloud.passport.configuration;
 import cn.com.xuxiaowei.cloud.passport.filter.CsrfCookieBeforeOncePerRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -57,24 +54,6 @@ public class WebSecurityConfigurerAdapterConfiguration extends WebSecurityConfig
     public void setCorsConfigurationSource(@Qualifier("urlBasedCorsConfigurationSource")
                                                    CorsConfigurationSource corsConfigurationSource) {
         this.corsConfigurationSource = corsConfigurationSource;
-    }
-
-    /**
-     * 认证管理器
-     */
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManager() throws Exception {
-        return super.authenticationManager();
-    }
-
-    /**
-     * 用户详细信息服务
-     */
-    @Bean
-    @Override
-    protected UserDetailsService userDetailsService() {
-        return super.userDetailsService();
     }
 
     /**
