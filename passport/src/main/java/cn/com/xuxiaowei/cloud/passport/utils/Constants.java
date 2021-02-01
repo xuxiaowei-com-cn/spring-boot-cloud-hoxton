@@ -225,4 +225,29 @@ public final class Constants {
     public static final String CACHE_CONTROL = "Cache-Control";
 
 
+    //////////////////////////////////////////////////  CSRF  //////////////////////////////////////////////////
+
+
+    /**
+     * Cookie 名
+     *
+     * @see org.springframework.security.web.csrf.CookieCsrfTokenRepository#DEFAULT_CSRF_COOKIE_NAME
+     */
+    public static final String DEFAULT_CSRF_COOKIE_NAME = "XSRF-TOKEN";
+
+    /**
+     * CSRF 参数名
+     *
+     * @see org.springframework.security.web.csrf.CookieCsrfTokenRepository#DEFAULT_CSRF_PARAMETER_NAME
+     */
+    public static final String DEFAULT_CSRF_PARAMETER_NAME = "_csrf";
+
+    /**
+     * CSRF Header 参数名
+     *
+     * @see org.springframework.security.web.csrf.CookieCsrfTokenRepository#DEFAULT_CSRF_HEADER_NAME
+     */
+    public static final String DEFAULT_CSRF_HEADER_NAME = "X-XSRF-TOKEN";
+
+
 }

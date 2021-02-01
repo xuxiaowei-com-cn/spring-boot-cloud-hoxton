@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
+import static cn.com.xuxiaowei.cloud.passport.utils.Constants.DEFAULT_CSRF_COOKIE_NAME;
 import static java.lang.Integer.parseInt;
 
 /**
@@ -47,7 +48,7 @@ public class CsrfCookieBeforeOncePerRequestFilter extends OncePerRequestFilter {
             log.debug("CsrfToken 为空");
         } else {
 
-            String cookieName = "XSRF-TOKEN";
+            String cookieName = DEFAULT_CSRF_COOKIE_NAME;
 
             Cookie[] cookies = request.getCookies();
 
