@@ -4,14 +4,6 @@ spring:
   #
   # 数据库 配置
   datasource:
-    # 数据库 驱动名称（包括包名）
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    # 数据库 URL
-    url: jdbc:mysql://127.0.0.1:3306/spring-boot-cloud-hoxton?useSSL=false&serverTimezone=GMT%2B8
-    # 数据库 用户名
-    username: root
-    # 密码
-    password: root
     #
     # 多数据源
     #
