@@ -19,7 +19,7 @@ import java.util.Map;
  * OAuth2 服务 程序执行入口
  *
  * @author xuxiaowei
- * @see AuthorizationEndpoint#authorize(Map, Map, SessionStatus, Principal)
+ * @see AuthorizationEndpoint#authorize(Map, Map, SessionStatus, Principal) 多权限使用空格分隔
  * @see TokenEndpoint#getAccessToken(Principal, Map)
  * @see TokenEndpoint#postAccessToken(Principal, Map)
  * @see BaseClientDetails#BaseClientDetails(String, String, String, String, String, String) 若 authorizedGrantTypes 为空，
