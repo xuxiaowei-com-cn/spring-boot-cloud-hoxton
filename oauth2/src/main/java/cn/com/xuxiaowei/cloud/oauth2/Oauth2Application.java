@@ -9,6 +9,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.provider.client.BaseClientDetails;
 import org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint;
+import org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -24,6 +25,7 @@ import java.util.Map;
  * @see AuthorizationEndpoint#authorize(Map, Map, SessionStatus, Principal) 多权限使用空格分隔
  * @see TokenEndpoint#getAccessToken(Principal, Map)
  * @see TokenEndpoint#postAccessToken(Principal, Map)
+ * @see CheckTokenEndpoint#checkToken(String)
  * @see BaseClientDetails#BaseClientDetails(String, String, String, String, String, String) 若 authorizedGrantTypes 为空，
  * 程序自动设置默认值："authorization_code", "refresh_token"
  * @see BaseClientDetails#isAutoApprove(String) 自动授权
