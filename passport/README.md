@@ -43,3 +43,9 @@
     - velocity
     - p6spy
     - patchca
+
+## SQL
+
+- spring-security-core-*.*.*.RELEASE.jar
+    - org.springframework.security.core.userdetails.jdbc
+        - users.ddl
