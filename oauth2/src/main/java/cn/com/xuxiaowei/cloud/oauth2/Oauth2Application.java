@@ -24,6 +24,7 @@ import java.util.Map;
  * @see TokenEndpoint#postAccessToken(Principal, Map)
  * @see BaseClientDetails#BaseClientDetails(String, String, String, String, String, String) 若 authorizedGrantTypes 为空，
  * 程序自动设置默认值："authorization_code", "refresh_token"
+ * @see BaseClientDetails#isAutoApprove(String) 自动授权
  * @since 0.0.1
  */
 @EnableCaching
