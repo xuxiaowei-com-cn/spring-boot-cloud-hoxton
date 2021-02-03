@@ -45,6 +45,7 @@
 
 <script setup>
 import {getCurrentInstance, onMounted, reactive, ref} from 'vue'
+import {login} from '../../api/login'
 
 // 获取当前示例
 const {ctx} = getCurrentInstance()
@@ -98,13 +99,11 @@ onMounted(() => {
 
     ctx.$refs['loginRef'].validate((valid) => {
       if (valid) {
-
-        const params = new URLSearchParams();
-        params.append('username', loginForm.username);
-        params.append('remember-me', loginForm.rememberMe);
-        params.append('password', loginForm.password);
-
-        ctx.$axios.post('http://localhost:10401/login', params).then(response => {
+        login({
+          'username': loginForm.username,
+          'remember-me': loginForm.rememberMe,
+          'password': loginForm.password
+        }).then(response => {
           console.info(response)
         }).catch(response => {
           console.error(response)
