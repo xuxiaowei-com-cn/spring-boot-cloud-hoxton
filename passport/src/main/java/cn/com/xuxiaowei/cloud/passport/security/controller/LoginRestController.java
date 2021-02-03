@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
+import static cn.com.xuxiaowei.cloud.passport.enums.CodeEnums.*;
+import static cn.com.xuxiaowei.cloud.passport.utils.Constants.CODE;
+import static cn.com.xuxiaowei.cloud.passport.utils.Constants.MSG;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
@@ -32,7 +35,8 @@ public class LoginRestController {
     @RequestMapping(produces = {APPLICATION_JSON_VALUE})
     public Map<String, Object> json(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> map = new HashMap<>(4);
-        map.put("msg", "异常登录");
+        map.put(CODE, A0303.code);
+        map.put(MSG, "异常登录");
         return map;
     }
 
@@ -48,7 +52,8 @@ public class LoginRestController {
     @RequestMapping(produces = {"!" + APPLICATION_JSON_VALUE})
     public Map<String, Object> html(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> map = new HashMap<>(4);
-        map.put("msg", "请在页面中登录");
+        map.put(CODE, ERR.code);
+        map.put(MSG, "请在页面中登录");
         return map;
     }
 
@@ -62,7 +67,8 @@ public class LoginRestController {
     @RequestMapping("/success")
     public Map<String, Object> success(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> map = new HashMap<>(4);
-        map.put("msg", "登录成功");
+        map.put(CODE, OK.code);
+        map.put(MSG, "登录成功");
         return map;
     }
 
@@ -76,7 +82,8 @@ public class LoginRestController {
     @RequestMapping("/failure")
     public Map<String, Object> failure(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> map = new HashMap<>(4);
-        map.put("msg", "登录失败");
+        map.put(CODE, ERR.code);
+        map.put(MSG, "登录失败");
         return map;
     }
 
