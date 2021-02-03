@@ -87,6 +87,9 @@ function patchcaClick() {
   patchcaSrc.value = patchcaSrc.value.split('?')[0] + '?t=' + new Date().getTime()
 }
 
+/**
+ * 登录按钮
+ */
 function loginButton() {
   ctx.$refs['loginRef'].validate((valid) => {
     if (valid) {
