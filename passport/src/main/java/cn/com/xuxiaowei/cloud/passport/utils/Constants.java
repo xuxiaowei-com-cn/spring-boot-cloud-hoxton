@@ -21,6 +21,25 @@ package cn.com.xuxiaowei.cloud.passport.utils;
 public final class Constants {
 
 
+    //////////////////////////////////////////////////  响应  //////////////////////////////////////////////////
+
+
+    /**
+     * 响应代码
+     */
+    public static final String CODE = "code";
+
+    /**
+     * 响应消息
+     */
+    public static final String MSG = "msg";
+
+    /**
+     * 响应数据
+     */
+    public static final String DATA = "data";
+
+
     //////////////////////////////////////////////////  format  //////////////////////////////////////////////////
 
 
