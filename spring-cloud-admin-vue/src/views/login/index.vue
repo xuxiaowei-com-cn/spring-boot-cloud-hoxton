@@ -100,7 +100,7 @@ function loginButton() {
         console.error(response)
       })
     } else {
-      console.error('请填写相关信息！')
+      console.error('请填写账户信息！')
     }
   })
 }
