@@ -1,5 +1,5 @@
 import Home from '../views/home/index.vue'
-import Login from './login'
+import { Login } from './login'
 
 import { ElementPlus } from './demo'
 

@@ -1,7 +1,9 @@
-import Login from '../../views/login/index.vue'
-
-export default {
+const Login = {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: () => import('../../views/login/index.vue')
+}
+
+export {
+    Login,
 }
