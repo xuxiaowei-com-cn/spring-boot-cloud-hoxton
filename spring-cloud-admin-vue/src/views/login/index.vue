@@ -6,7 +6,7 @@
       </div>
     </el-header>
     <el-main class="login-main">
-      <el-form ref="loginRef" id="loginRef" :model="loginForm" :rules="loginRules" class="login-form">
+      <el-form :ref="loginRef" id="loginRef" :model="loginForm" :rules="loginRules" class="login-form">
         <el-form-item prop="username">
           <i class="el-icon-user input-icon"></i>
           <el-input type="text" v-model="loginForm.username" class="input-icon-left" placeholder="请输入用户名"
@@ -51,6 +51,7 @@ import {login} from '../../api/login'
 const {ctx} = getCurrentInstance()
 
 const patchcaSrc = ref('http://localhost:10401/patchca')
+const loginRef = ref('loginRef')
 
 // 登录参数
 const loginForm = reactive({
