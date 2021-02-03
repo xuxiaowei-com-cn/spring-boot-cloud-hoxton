@@ -39,6 +39,16 @@ public final class Constants {
      */
     public static final String DATA = "data";
 
+    /**
+     * Ajax 是否执行自定义正常响应
+     */
+    public static final String THEN = "then";
+
+    /**
+     * Ajax 是否执行自定义异常响应
+     */
+    public static final String CATCH = "catch";
+
 
     //////////////////////////////////////////////////  format  //////////////////////////////////////////////////
 
