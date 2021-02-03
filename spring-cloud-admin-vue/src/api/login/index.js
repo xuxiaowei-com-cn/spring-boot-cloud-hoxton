@@ -6,7 +6,9 @@ import request from '../../utils/request'
  * @returns {Promise<AxiosResponse<any>>}
  */
 export function login(params) {
-    return request.post('http://localhost:10401/login',
-        params
-    )
+    return request({
+        url: 'http://localhost:10401/login',
+        method: 'post',
+        params: params
+    })
 }
