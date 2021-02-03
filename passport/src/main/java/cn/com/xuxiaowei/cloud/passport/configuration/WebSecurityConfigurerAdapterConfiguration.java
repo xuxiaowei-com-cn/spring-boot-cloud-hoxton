@@ -79,6 +79,9 @@ public class WebSecurityConfigurerAdapterConfiguration extends WebSecurityConfig
         // 全自动区分计算机和人类的图灵测试 不需要登录
         http.authorizeRequests().antMatchers(PatchcaHttpServlet.URL).permitAll();
 
+        // 是否在线 不需要登录
+        http.authorizeRequests().antMatchers("/on-line/whether").permitAll();
+
         // 权限配置
         http.authorizeRequests().anyRequest().authenticated();
 
