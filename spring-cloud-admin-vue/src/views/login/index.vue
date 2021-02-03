@@ -98,7 +98,9 @@ function loginButton() {
         'remember-me': loginForm.rememberMe,
         'password': loginForm.password
       }).then(response => {
-        console.info(response)
+        if (response.code === '00000') {
+          location.hash = '/'
+        }
       }).catch(response => {
         console.error(response)
       })
