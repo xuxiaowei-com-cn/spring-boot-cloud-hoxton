@@ -36,7 +36,7 @@
           <el-link type="primary" target="_blank" :underline="false" href="#forget" class="forget">忘记密码？</el-link>
         </el-form-item>
         <el-form-item>
-          <el-button @click="login()" class="login-button">登录</el-button>
+          <el-button @click="loginButton()" class="login-button">登录</el-button>
         </el-form-item>
       </el-form>
     </el-main>
@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-import {getCurrentInstance, onMounted, reactive, ref} from 'vue'
+import {getCurrentInstance, reactive, ref} from 'vue'
 import {login} from '../../api/login'
 
 // 获取当前示例
@@ -87,35 +87,23 @@ function patchcaClick() {
   patchcaSrc.value = patchcaSrc.value.split('?')[0] + '?t=' + new Date().getTime()
 }
 
-/**
- * 实例被挂载后调用
- */
-onMounted(() => {
-
-  /**
-   * 登录请求
-   */
-  ctx.login = function () {
-
-    ctx.$refs['loginRef'].validate((valid) => {
-      if (valid) {
-        login({
-          'username': loginForm.username,
-          'remember-me': loginForm.rememberMe,
-          'password': loginForm.password
-        }).then(response => {
-          console.info(response)
-        }).catch(response => {
-          console.error(response)
-        })
-      } else {
-        console.error('请填写相关信息！')
-      }
-    })
-
-  }
-
-})
+function loginButton() {
+  ctx.$refs['loginRef'].validate((valid) => {
+    if (valid) {
+      login({
+        'username': loginForm.username,
+        'remember-me': loginForm.rememberMe,
+        'password': loginForm.password
+      }).then(response => {
+        console.info(response)
+      }).catch(response => {
+        console.error(response)
+      })
+    } else {
+      console.error('请填写相关信息！')
+    }
+  })
+}
 
 </script>
 
