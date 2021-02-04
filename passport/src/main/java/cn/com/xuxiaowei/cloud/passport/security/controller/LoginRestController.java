@@ -70,7 +70,7 @@ public class LoginRestController {
         map.put(DATA, data);
         map.put(CODE, OK.code);
         map.put(MSG, "登录成功");
-        data.put("url", "http://localhost:10601/oauth/authorize?client_id=xuxiaowei_client&redirect_uri=http://127.0.0.1:123&response_type=code&scope=snsapi_base&state=beff3dfc-bad8-40db-b25f-e5459e3d6ad7");
+        data.put("url", "http://localhost:10601/oauth/authorize?client_id=xuxiaowei_client&redirect_uri=http://localhost:10601/oauth/auto/authorize&response_type=code&scope=snsapi_base&state=beff3dfc-bad8-40db-b25f-e5459e3d6ad7");
         return map;
     }
 
