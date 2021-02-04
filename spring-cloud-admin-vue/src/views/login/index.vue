@@ -99,7 +99,12 @@ function loginButton() {
         'password': loginForm.password
       }).then(response => {
         if (response.code === '00000') {
-          location.hash = '/'
+          const data = response.data
+          if (data && data.url) {
+            location.href = data.url
+          } else {
+            location.hash = '/'
+          }
         }
       }).catch(response => {
         console.error(response)
