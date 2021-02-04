@@ -9,8 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static cn.com.xuxiaowei.cloud.passport.enums.CodeEnums.*;
-import static cn.com.xuxiaowei.cloud.passport.utils.Constants.CODE;
-import static cn.com.xuxiaowei.cloud.passport.utils.Constants.MSG;
+import static cn.com.xuxiaowei.cloud.passport.utils.Constants.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
@@ -67,8 +66,11 @@ public class LoginRestController {
     @RequestMapping("/success")
     public Map<String, Object> success(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> map = new HashMap<>(4);
+        Map<String, Object> data = new HashMap<>(4);
+        map.put(DATA, data);
         map.put(CODE, OK.code);
         map.put(MSG, "登录成功");
+        data.put("url", "http://localhost:10601/oauth/authorize?client_id=xuxiaowei_client&redirect_uri=http://127.0.0.1:123&response_type=code&scope=snsapi_base&state=beff3dfc-bad8-40db-b25f-e5459e3d6ad7");
         return map;
     }
 
