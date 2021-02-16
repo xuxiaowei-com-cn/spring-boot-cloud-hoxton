@@ -11,3 +11,6 @@
         - 提供 @EnableEurekaClient 注解，使用 Eureka 注册服务。
         - 包含 Hystrix 依赖
         - 包含 Ribbon 依赖
+
+- Alibaba
+    - Nacos Service Discovery
