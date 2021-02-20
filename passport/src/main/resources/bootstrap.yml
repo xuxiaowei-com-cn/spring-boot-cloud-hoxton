@@ -12,6 +12,7 @@ spring:
       - mybatis-plus-dev # MyBatis Plus-开发配置
       - nacos-dev # Nacos-开发配置
       - redis-dev # Redis-开发配置
+      - seata-dev # seata-开发配置
       - server-dev # 服务器-开发配置
   application:
     # 在 Eureka Server 注册的服务名
