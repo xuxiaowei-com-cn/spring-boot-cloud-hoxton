@@ -11,6 +11,7 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
  * 断路器监控 程序执行入口
  * <p>
  * Spring Cloud 使用注解 {@link EnableEurekaClient} 的方式提供 Eureka 客户端（禁用 Eureka）
+ * Spring Cloud 使用注解 {@link EnableConfigurationProperties#value()} 设置 {@link AutoServiceRegistrationProperties} 的方式提供 Nacos 客户端
  *
  * @author xuxiaowei
  * @since 0.0.1
