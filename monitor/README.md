@@ -11,3 +11,6 @@
         - 包含 Enable Discovery Client 依赖
             - 包含 Hystrix 依赖
             - 包含 Ribbon 依赖
+
+- Alibaba
+    - Nacos Service Discovery
