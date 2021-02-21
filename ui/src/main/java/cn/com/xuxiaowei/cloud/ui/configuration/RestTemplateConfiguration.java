@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.cloud.ui.ribbon;
+package cn.com.xuxiaowei.cloud.ui.configuration;
 
 import cn.com.xuxiaowei.cloud.ui.interceptor.RestTemplateGrayRequestInterceptor;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
