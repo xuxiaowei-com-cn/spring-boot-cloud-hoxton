@@ -1,14 +1,17 @@
 package cn.com.xuxiaowei.cloud.ui.test.controller;
 
-import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportI;
+import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestPassportHystrixService;
 import cn.com.xuxiaowei.cloud.ui.utils.http.HeadersUtils;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import io.micrometer.core.instrument.util.StringUtils;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -86,7 +89,7 @@ public class TestPassportRestController {
         HeadersUtils.add(request, headers);
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
-        return restTemplate.exchange("http://passport/test/echo", HttpMethod.GET, entity, String.class).getBody();
+        return restTemplate.exchange("http://me/test/echo", HttpMethod.GET, entity, String.class).getBody();
     }
 
     /**
@@ -95,13 +98,16 @@ public class TestPassportRestController {
      * @param request       请求
      * @param response      响应
      * @param session       session
-     * @param testPassportI 登录模块测试表，必填，否则调用失败
+     * @param testPassportMe 登录模块测试表，必填，否则调用失败
      * @return 返回 测试 登录模块 结果
      */
+    @DS("master")
+    @Transactional(rollbackFor = Exception.class)
+    @GlobalTransactional
     @RequestMapping(value = "/save")
     public Map<String, Object> save(HttpServletRequest request, HttpServletResponse response, HttpSession session,
-                                    @RequestBody TestPassportI testPassportI) {
-        return testPassportHystrixService.save(testPassportI);
+                                    @RequestBody TestPassportMe testPassportMe) {
+        return testPassportHystrixService.save(testPassportMe);
     }
 
 }

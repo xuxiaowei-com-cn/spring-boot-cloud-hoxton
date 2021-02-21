@@ -1,10 +1,12 @@
 package cn.com.xuxiaowei.cloud.ui.test.service.impl;
 
-import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportI;
-import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestIHystrixService;
+import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
+import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestMeHystrixService;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestPassportHystrixService;
 import cn.com.xuxiaowei.cloud.ui.test.service.ITestService;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import io.seata.core.context.RootContext;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,16 +23,15 @@ import java.util.Map;
  */
 @Slf4j
 @Service
-@SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
 public class TestServiceImpl implements ITestService {
 
-    private TestIHystrixService testIHystrixService;
+    private TestMeHystrixService testMeHystrixService;
 
     private TestPassportHystrixService testPassportHystrixService;
 
     @Autowired
-    public void setTestIHystrixService(TestIHystrixService testIHystrixService) {
-        this.testIHystrixService = testIHystrixService;
+    public void setTestMeHystrixService(TestMeHystrixService testMeHystrixService) {
+        this.testMeHystrixService = testMeHystrixService;
     }
 
     @Autowired
@@ -41,24 +42,26 @@ public class TestServiceImpl implements ITestService {
     /**
      * 测试 分布式事务 seata
      *
-     * @param testPassportI 测试表
+     * @param testPassportMe 测试表
      * @return 返回 分布式事务 seata 结果
      */
+    @DS("master")
     @Override
+    @GlobalTransactional
     @Transactional(rollbackFor = Exception.class)
-    public Map<String, Object> seataSave(TestPassportI testPassportI) {
+    public Map<String, Object> saveSeata(TestPassportMe testPassportMe) {
 
         log.info("当前 XID: {}", RootContext.getXID());
 
         Map<String, Object> map = new HashMap<>(4);
 
-        Map<String, Object> saveI = testIHystrixService.save(testPassportI);
-        Map<String, Object> savePassport = testPassportHystrixService.save(testPassportI);
+        Map<String, Object> saveMe = testMeHystrixService.save(testPassportMe);
+        Map<String, Object> savePassport = testPassportHystrixService.save(testPassportMe);
 
         map.put("code", "00000");
         map.put("msg", "保存成功");
 
-        map.put("saveI", saveI);
+        map.put("saveMe", saveMe);
         map.put("savePassport", savePassport);
 
         return map;

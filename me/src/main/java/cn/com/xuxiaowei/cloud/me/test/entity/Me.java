@@ -1,6 +1,6 @@
-package cn.com.xuxiaowei.cloud.passport.test.entity;
+package cn.com.xuxiaowei.cloud.me.test.entity;
 
-import cn.com.xuxiaowei.cloud.passport.common.Entity;
+import cn.com.xuxiaowei.cloud.me.common.Entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -9,9 +9,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+
 /**
  * <p>
- * 登录模块测试表
+ * 用户模块测试表
  * </p>
  *
  * @author 徐晓伟
@@ -20,35 +21,34 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("test_passport")
-public class Passport extends Entity {
+@TableName("test_me")
+public class Me extends Entity {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 登录模块测试表主键
      */
-    @TableId(value = "passport_id", type = IdType.AUTO)
-    private Long passportId;
+    @TableId(value = "me_id", type = IdType.AUTO)
+    private Long meId;
 
     /**
      * 消息
      */
-    @TableField("passport_msg")
-    private String passportMsg;
+    @TableField("me_msg")
+    private String meMsg;
 
     /**
      * 数量
      */
-    @TableField("passport_num")
-    private Integer passportNum;
+    @TableField("me_num")
+    private Integer meNum;
 
 
-    public static final String PASSPORT_ID = "passport_id";
+    public static final String ME_ID = "me_id";
 
-    public static final String PASSPORT_MSG = "passport_msg";
+    public static final String ME_MSG = "me_msg";
 
-    public static final String PASSPORT_NUM = "passport_num";
-
+    public static final String ME_NUM = "me_num";
 
 }

@@ -1,7 +1,7 @@
 package cn.com.xuxiaowei.cloud.ui.test.controller;
 
 import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
-import cn.com.xuxiaowei.cloud.ui.test.service.ITestService;
+import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestMeHystrixService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,36 +15,36 @@ import java.util.Map;
 
 
 /**
- * 测试 RestController
+ * 测试 用户模块 RestController
  *
  * @author xuxiaowei
  * @since 0.0.1
  */
 @Slf4j
 @RestController
-@RequestMapping("/test")
-public class TestController {
+@RequestMapping("/test/me")
+public class TestMeRestController {
 
-    private ITestService iTestService;
+    private TestMeHystrixService testMeHystrixService;
 
     @Autowired
-    public void setiTestService(ITestService iTestService) {
-        this.iTestService = iTestService;
+    public void setTestMeHystrixService(TestMeHystrixService testMeHystrixService) {
+        this.testMeHystrixService = testMeHystrixService;
     }
 
     /**
-     * 测试 用户、登录 模块 参数接收、保存数据 接口
+     * 测试 用户模块 参数接收、保存数据 接口
      *
      * @param request       请求
      * @param response      响应
      * @param session       session
-     * @param testPassportMe 用户、登录模块测试表，必填，否则调用失败
-     * @return 返回 测试 用户、登录模块 结果
+     * @param testPassportMe 用户模块测试表，必填，否则调用失败
+     * @return 返回 测试 用户模块 结果
      */
     @RequestMapping(value = "/save")
     public Map<String, Object> save(HttpServletRequest request, HttpServletResponse response, HttpSession session,
                                     @RequestBody TestPassportMe testPassportMe) {
-        return iTestService.saveSeata(testPassportMe);
+        return testMeHystrixService.save(testPassportMe);
     }
 
 }

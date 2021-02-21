@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.cloud.ui.configuration;
+package cn.com.xuxiaowei.cloud.me.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

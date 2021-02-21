@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.ui.test.service;
 
-import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportI;
+import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
 
 import java.util.Map;
 
@@ -15,9 +15,9 @@ public interface ITestService {
     /**
      * 测试 分布式事务 seata
      *
-     * @param testPassportI 测试表
+     * @param testPassportMe 测试表
      * @return 返回 分布式事务 seata 结果
      */
-    Map<String, Object> seataSave(TestPassportI testPassportI);
+    Map<String, Object> saveSeata(TestPassportMe testPassportMe);
 
 }

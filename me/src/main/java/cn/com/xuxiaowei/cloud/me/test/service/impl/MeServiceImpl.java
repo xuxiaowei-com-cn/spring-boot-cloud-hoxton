@@ -1,8 +1,8 @@
-package cn.com.xuxiaowei.cloud.passport.test.service.impl;
+package cn.com.xuxiaowei.cloud.me.test.service.impl;
 
-import cn.com.xuxiaowei.cloud.passport.test.entity.Passport;
-import cn.com.xuxiaowei.cloud.passport.test.mapper.PassportMapper;
-import cn.com.xuxiaowei.cloud.passport.test.service.IPassportService;
+import cn.com.xuxiaowei.cloud.me.test.entity.Me;
+import cn.com.xuxiaowei.cloud.me.test.mapper.MeMapper;
+import cn.com.xuxiaowei.cloud.me.test.service.IMeService;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.core.context.RootContext;
@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
- * 登录模块测试表 服务实现类
+ * 用户模块测试表 服务实现类
  * </p>
  *
  * @author 徐晓伟
@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Slf4j
 @Service
-public class PassportServiceImpl extends ServiceImpl<PassportMapper, Passport> implements IPassportService {
+public class MeServiceImpl extends ServiceImpl<MeMapper, Me> implements IMeService {
 
     /**
      * 保存-分布式事务
@@ -32,13 +32,13 @@ public class PassportServiceImpl extends ServiceImpl<PassportMapper, Passport> i
     @DS("master")
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-    public boolean saveSeata(Passport entity) {
+    public boolean saveSeata(Me entity) {
 
         log.info("当前 XID: {}", RootContext.getXID());
 
         boolean save = save(entity);
 
-        int i = 1 / entity.getPassportNum();
+        int i = 1 / entity.getMeNum();
 
         return save;
     }

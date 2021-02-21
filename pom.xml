@@ -55,6 +55,7 @@
         <module>passport</module>
         <module>oauth2</module>
         <module>ui</module>
+        <module>me</module>
     </modules>
 
     <dependencies>

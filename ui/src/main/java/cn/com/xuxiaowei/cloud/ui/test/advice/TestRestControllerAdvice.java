@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.ui.test.advice;
 
-import cn.com.xuxiaowei.cloud.ui.test.exception.TestIException;
+import cn.com.xuxiaowei.cloud.ui.test.exception.TestMeException;
 import cn.com.xuxiaowei.cloud.ui.test.exception.TestPassportException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -40,8 +40,8 @@ public class TestRestControllerAdvice {
      * @param e 异常
      * @return 返回 异常数据
      */
-    @ExceptionHandler(TestIException.class)
-    public Map<String, Object> testIException(TestIException e) {
+    @ExceptionHandler(TestMeException.class)
+    public Map<String, Object> testMeException(TestMeException e) {
         Map<String, Object> map = new HashMap<>(4);
         map.put("code", e.getCode());
         map.put("msg", e.getMsg());
