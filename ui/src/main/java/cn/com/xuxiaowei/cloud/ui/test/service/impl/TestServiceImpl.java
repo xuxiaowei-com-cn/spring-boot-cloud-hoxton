@@ -5,7 +5,6 @@ import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestIHystrixService;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestPassportHystrixService;
 import cn.com.xuxiaowei.cloud.ui.test.service.ITestService;
 import io.seata.core.context.RootContext;
-import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
