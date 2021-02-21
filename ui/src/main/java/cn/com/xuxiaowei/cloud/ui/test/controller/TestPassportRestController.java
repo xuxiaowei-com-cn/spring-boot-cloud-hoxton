@@ -3,7 +3,6 @@ package cn.com.xuxiaowei.cloud.ui.test.controller;
 import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestPassportHystrixService;
 import cn.com.xuxiaowei.cloud.ui.utils.http.HeadersUtils;
-import com.baomidou.dynamic.datasource.annotation.DS;
 import io.micrometer.core.instrument.util.StringUtils;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
@@ -101,7 +100,6 @@ public class TestPassportRestController {
      * @param testPassportMe 登录模块测试表，必填，否则调用失败
      * @return 返回 测试 登录模块 结果
      */
-    @DS("master")
     @Transactional(rollbackFor = Exception.class)
     @GlobalTransactional
     @RequestMapping(value = "/save")
