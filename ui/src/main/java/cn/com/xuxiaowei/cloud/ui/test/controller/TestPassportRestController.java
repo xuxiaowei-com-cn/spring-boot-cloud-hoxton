@@ -35,7 +35,7 @@ public class TestPassportRestController {
      */
     @RequestMapping("/echo")
     public String echo(HttpServletRequest request) {
-        String gray = request.getHeader("Gray");
+        String gray = request.getHeader("gray");
         if (StringUtils.isNotEmpty(gray)) {
             if (Boolean.TRUE.toString().equals(gray)) {
                 return testPassportHystrixService.echo("true");
