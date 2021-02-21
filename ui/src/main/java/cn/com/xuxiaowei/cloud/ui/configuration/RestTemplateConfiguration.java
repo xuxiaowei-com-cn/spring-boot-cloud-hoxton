@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.ui.configuration;
 
-import cn.com.xuxiaowei.cloud.ui.interceptor.RestTemplateGrayRequestInterceptor;
+import cn.com.xuxiaowei.cloud.ui.interceptor.RestTemplateGrayClientHttpRequestInterceptor;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,7 @@ public class RestTemplateConfiguration {
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
         List<ClientHttpRequestInterceptor> interceptors = restTemplate.getInterceptors();
-        interceptors.add(new RestTemplateGrayRequestInterceptor());
+        interceptors.add(new RestTemplateGrayClientHttpRequestInterceptor());
         return restTemplate;
     }
 
