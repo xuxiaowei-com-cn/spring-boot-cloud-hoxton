@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestHeader;
 public interface TestPassportService {
 
     /**
-     * 测试 登录 灰度发布
+     * 测试 登录模块 灰度发布
      *
      * @param gray 灰度发布
      * @return 返回 灰度发布
      */
-    @GetMapping("/echo")
+    @GetMapping("/test/echo")
     String echo(@RequestHeader("Gray") String gray);
 
 }
