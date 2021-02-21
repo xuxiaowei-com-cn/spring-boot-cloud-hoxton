@@ -4,13 +4,11 @@ import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestPassportHystrixService;
 import cn.com.xuxiaowei.cloud.ui.utils.http.HeadersUtils;
 import io.micrometer.core.instrument.util.StringUtils;
-import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -94,14 +92,12 @@ public class TestPassportRestController {
     /**
      * 测试 登录模块 参数接收、保存数据 接口
      *
-     * @param request       请求
-     * @param response      响应
-     * @param session       session
+     * @param request        请求
+     * @param response       响应
+     * @param session        session
      * @param testPassportMe 登录模块测试表，必填，否则调用失败
      * @return 返回 测试 登录模块 结果
      */
-    @Transactional(rollbackFor = Exception.class)
-    @GlobalTransactional
     @RequestMapping(value = "/save")
     public Map<String, Object> save(HttpServletRequest request, HttpServletResponse response, HttpSession session,
                                     @RequestBody TestPassportMe testPassportMe) {
