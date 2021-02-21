@@ -27,8 +27,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableResourceServer
 @SpringBootApplication
 @EnableTransactionManagement
-@ServletComponentScan("cn.com.xuxiaowei.cloud.passport.servlet")
-@MapperScan("cn.com.xuxiaowei.cloud.passport.*.mapper.**")
+@ServletComponentScan("cn.com.xuxiaowei.cloud.*.servlet")
+@MapperScan("cn.com.xuxiaowei.cloud.*.*.mapper.**")
 @EnableConfigurationProperties(AutoServiceRegistrationProperties.class)
 public class PassportApplication {
 

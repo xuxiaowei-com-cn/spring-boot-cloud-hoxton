@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -43,7 +44,8 @@ import java.util.Map;
 @EnableAuthorizationServer
 @SpringBootApplication
 @EnableTransactionManagement
-@MapperScan("cn.com.xuxiaowei.cloud.oauth2.*.mapper.**")
+@ServletComponentScan("cn.com.xuxiaowei.cloud.*.servlet")
+@MapperScan("cn.com.xuxiaowei.cloud.*.*.mapper.**")
 @EnableConfigurationProperties(AutoServiceRegistrationProperties.class)
 public class Oauth2Application {
 
