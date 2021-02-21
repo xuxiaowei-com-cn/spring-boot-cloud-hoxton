@@ -55,6 +55,8 @@ public class PassportRestController {
 
         passportService.save(passport);
 
+        int a = 1 / passport.getPassportNum();
+
         map.put("code", "00000");
         map.put("msg", "保存成功");
         map.put("Passport Session ID", session.getId());

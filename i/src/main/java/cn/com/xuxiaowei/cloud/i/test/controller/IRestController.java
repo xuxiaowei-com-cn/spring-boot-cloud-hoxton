@@ -55,6 +55,8 @@ public class IRestController {
 
         iiService.save(i);
 
+        int a = 1 / i.getINum();
+
         map.put("code", "00000");
         map.put("msg", "保存成功");
         map.put("I Session ID", session.getId());
