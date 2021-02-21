@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.ui.test.controller;
 
-import cn.com.xuxiaowei.cloud.ui.test.feign.TestPassportService;
+import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestPassportHystrixService;
 import io.micrometer.core.instrument.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +20,11 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/test/passport")
 public class TestPassportRestController {
 
-    private TestPassportService testPassportService;
+    private TestPassportHystrixService testPassportHystrixService;
 
     @Autowired
-    public void setTestPassportService(TestPassportService testPassportService) {
-        this.testPassportService = testPassportService;
+    public void setTestPassportHystrixService(TestPassportHystrixService testPassportHystrixService) {
+        this.testPassportHystrixService = testPassportHystrixService;
     }
 
     /**
@@ -38,10 +38,10 @@ public class TestPassportRestController {
         String gray = request.getHeader("Gray");
         if (StringUtils.isNotEmpty(gray)) {
             if (Boolean.TRUE.toString().equals(gray)) {
-                return testPassportService.echo("true");
+                return testPassportHystrixService.echo("true");
             }
         }
-        return testPassportService.echo("false");
+        return testPassportHystrixService.echo("false");
     }
 
 }
