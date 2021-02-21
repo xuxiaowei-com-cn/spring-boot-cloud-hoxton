@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * 测试 登录 RestController
@@ -46,6 +47,10 @@ public class TestPassportRestController {
      */
     @RequestMapping("/echo")
     public String echo(HttpServletRequest request) {
+
+        // 创建 Session
+        HttpSession session = request.getSession();
+
         String gray = request.getHeader("gray");
         if (StringUtils.isNotEmpty(gray)) {
             if (Boolean.TRUE.toString().equals(gray)) {
