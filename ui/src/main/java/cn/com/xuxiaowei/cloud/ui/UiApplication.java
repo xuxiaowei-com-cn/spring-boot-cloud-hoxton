@@ -22,6 +22,8 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableRedisHttpSession
 @EnableFeignClients
 @SpringBootApplication
+@ServletComponentScan("cn.com.xuxiaowei.cloud.*.servlet")
+@MapperScan("cn.com.xuxiaowei.cloud.*.*.mapper.**")
 @EnableConfigurationProperties(AutoServiceRegistrationProperties.class)
 public class UiApplication {
 
