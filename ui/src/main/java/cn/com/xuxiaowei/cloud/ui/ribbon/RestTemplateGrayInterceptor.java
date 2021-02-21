@@ -5,11 +5,12 @@ import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 
 /**
- * 灰度 Http请求拦截器
+ * 灰度 Http请求拦截器 {@link RestTemplate}
  *
  * @author xuxiaowei
  * @since 0.0.1
