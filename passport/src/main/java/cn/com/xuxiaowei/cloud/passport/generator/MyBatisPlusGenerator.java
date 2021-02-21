@@ -30,7 +30,7 @@ public class MyBatisPlusGenerator {
     /**
      * 父包名
      */
-    private String parent = "cn.com.xuxiaowei";
+    private String parent = "cn.com.xuxiaowei.cloud";
 
     /**
      * 作者
