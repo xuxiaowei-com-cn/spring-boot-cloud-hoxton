@@ -16,8 +16,8 @@ public class WebSecurityConfigurerAdapterConfiguration extends WebSecurityConfig
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        // 用户模块 测试路径 不需要权限
-        http.authorizeRequests().antMatchers("/test/i/**").permitAll();
+        // 测试路径 不需要权限
+        http.authorizeRequests().antMatchers("/test/**").permitAll();
 
     }
 
