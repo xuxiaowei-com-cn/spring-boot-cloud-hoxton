@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.cloud.ui.test.impl;
+package cn.com.xuxiaowei.cloud.ui.test.service.impl;
 
 import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportI;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestIHystrixService;
