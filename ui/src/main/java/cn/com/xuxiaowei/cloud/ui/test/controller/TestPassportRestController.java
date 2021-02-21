@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
- * 测试 登录 RestController
+ * 测试 登录模块 RestController
  *
  * @author xuxiaowei
  * @since 0.0.1
