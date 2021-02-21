@@ -1,6 +1,7 @@
 package cn.com.xuxiaowei.cloud.ui.test.controller;
 
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestPassportHystrixService;
+import cn.com.xuxiaowei.cloud.ui.utils.http.HeadersUtils;
 import io.micrometer.core.instrument.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,6 +75,12 @@ public class TestPassportRestController {
             headers.add("gray",
                     Boolean.TRUE.toString().equals(gray) ? Boolean.TRUE.toString() : Boolean.FALSE.toString());
         }
+
+        // 分布式事务传递 TX_XID
+        HeadersUtils.xid(request, headers);
+        // 添加 Http Header（用于传递 Headers，Session 共享）
+        HeadersUtils.add(request, headers);
+
         HttpEntity<String> entity = new HttpEntity<>(headers);
         return restTemplate.exchange("http://passport/test/echo", HttpMethod.GET, entity, String.class).getBody();
     }
