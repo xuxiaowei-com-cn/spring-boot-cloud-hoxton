@@ -23,20 +23,15 @@ public class ResourceServerConfigurerAdapterConfiguration extends ResourceServer
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry expressionInterceptUrlRegistry
                 = http.antMatcher("/**").authorizeRequests();
 
-        // 登录模块 测试路径 不需要 Token
-        AntPathRequestMatcher testPassportAnt = new AntPathRequestMatcher("/test/passport/**");
-        expressionInterceptUrlRegistry.requestMatchers(testPassportAnt).permitAll();
-        // 用户模块 测试路径 不需要 Token
-        AntPathRequestMatcher testIAnt = new AntPathRequestMatcher("/test/i/**");
-        expressionInterceptUrlRegistry.requestMatchers(testIAnt).permitAll();
+        // 测试路径 不需要 Token
+        AntPathRequestMatcher testAnt = new AntPathRequestMatcher("/test/**");
+        expressionInterceptUrlRegistry.requestMatchers(testAnt).permitAll();
 
-        // 排除 登录模块 测试路径 需要 Token
-        NegatedRequestMatcher testPassportNegated = new NegatedRequestMatcher(testPassportAnt);
-        // 排除 用户模块 测试路径 需要 Token
-        NegatedRequestMatcher testINegated = new NegatedRequestMatcher(testIAnt);
+        // 排除 测试路径 需要 Token
+        NegatedRequestMatcher testNegated = new NegatedRequestMatcher(testAnt);
 
         // 其他路径 需要 Token
-        expressionInterceptUrlRegistry.requestMatchers(testPassportNegated, testINegated).authenticated();
+        expressionInterceptUrlRegistry.requestMatchers(testNegated).authenticated();
 
     }
 
