@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * 测试
@@ -26,10 +27,10 @@ public class TestRestController {
      * @return 返回 灰度发布
      */
     @RequestMapping("/echo")
-    public String echo(HttpServletRequest request, HttpServletResponse response) {
+    public String echo(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
         String gray = request.getHeader("gray");
-        return String.format("LocalAddr：%s，LocalPort：%s，Header gray：%s",
-                request.getLocalAddr(), request.getLocalPort(), gray);
+        return String.format("LocalAddr：%s，LocalPort：%s，Session：%s，Header gray：%s",
+                request.getLocalAddr(), request.getLocalPort(), session.getId(), gray);
     }
 
 }
