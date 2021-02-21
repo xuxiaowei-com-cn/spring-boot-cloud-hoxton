@@ -14,6 +14,7 @@ import org.springframework.security.web.util.matcher.NegatedRequestMatcher;
  * @since 0.0.1
  */
 @Configuration
+@SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
 public class ResourceServerConfigurerAdapterConfiguration extends ResourceServerConfigurerAdapter {
 
     @Override
@@ -25,12 +26,17 @@ public class ResourceServerConfigurerAdapterConfiguration extends ResourceServer
         // 登录模块 测试路径 不需要 Token
         AntPathRequestMatcher testPassportAnt = new AntPathRequestMatcher("/test/passport/**");
         expressionInterceptUrlRegistry.requestMatchers(testPassportAnt).permitAll();
+        // 用户模块 测试路径 不需要 Token
+        AntPathRequestMatcher testIAnt = new AntPathRequestMatcher("/test/i/**");
+        expressionInterceptUrlRegistry.requestMatchers(testIAnt).permitAll();
 
         // 排除 登录模块 测试路径 需要 Token
-         NegatedRequestMatcher testPassportNegated = new NegatedRequestMatcher(testPassportAnt);
+        NegatedRequestMatcher testPassportNegated = new NegatedRequestMatcher(testPassportAnt);
+        // 排除 用户模块 测试路径 需要 Token
+        NegatedRequestMatcher testINegated = new NegatedRequestMatcher(testIAnt);
 
         // 其他路径 需要 Token
-         expressionInterceptUrlRegistry.requestMatchers(testPassportNegated).authenticated();
+        expressionInterceptUrlRegistry.requestMatchers(testPassportNegated, testINegated).authenticated();
 
     }
 
