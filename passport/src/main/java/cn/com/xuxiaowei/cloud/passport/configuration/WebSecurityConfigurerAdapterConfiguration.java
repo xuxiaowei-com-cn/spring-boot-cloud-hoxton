@@ -82,7 +82,7 @@ public class WebSecurityConfigurerAdapterConfiguration extends WebSecurityConfig
 
         // 是否在线 不需要登录
         http.authorizeRequests().antMatchers("/on-line/whether").permitAll();
-        // 登录模块 测试路径 不需要权限
+        // 测试路径 不需要权限
         http.authorizeRequests().antMatchers("/test/**").permitAll();
 
         // 权限配置
