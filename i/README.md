@@ -21,6 +21,9 @@
     - MySQL Driver
     - Oracle Driver
 
+- I/O
+    - Validation
+
 - NoSQL
     - Spring Data Redis(Access+Driver)
 
