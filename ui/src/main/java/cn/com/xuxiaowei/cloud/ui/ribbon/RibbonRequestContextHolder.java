@@ -8,12 +8,7 @@ package cn.com.xuxiaowei.cloud.ui.ribbon;
  */
 public class RibbonRequestContextHolder {
 
-    private static final ThreadLocal<RibbonRequestContext> HOLDER = new ThreadLocal<RibbonRequestContext>() {
-        @Override
-        protected RibbonRequestContext initialValue() {
-            return new RibbonRequestContext();
-        }
-    };
+    private static final ThreadLocal<RibbonRequestContext> HOLDER = ThreadLocal.withInitial(RibbonRequestContext::new);
 
     public static RibbonRequestContext getCurrentContext() {
         return HOLDER.get();
