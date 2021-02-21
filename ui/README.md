@@ -37,7 +37,15 @@
         - 提供 @EnableEurekaClient 注解
 
 - Spring Cloud Routing
+    - Zuul[Maintenance]
+        - 提供 @EnableZuulProxy 注解
+        - 包含 Ribbon 依赖
+        - 包含 Hystrix 依赖
     - OpenFeign
+        - 提供 @EnableFeignClients 注解
+        - 包含 Ribbon 依赖
+        - Feign
+            - 使用 Netflix 的 Feign 客户端库来通过 Ribbon 调用服务
 
 - Alibaba
     - Nacos Service Discovery
