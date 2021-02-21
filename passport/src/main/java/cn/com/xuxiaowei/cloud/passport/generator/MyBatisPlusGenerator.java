@@ -11,7 +11,6 @@ import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
 import lombok.Data;
-import lombok.Getter;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
@@ -45,7 +44,6 @@ public class MyBatisPlusGenerator {
     /**
      * 主文件夹
      */
-    @Getter
     private String main;
 
     /**
