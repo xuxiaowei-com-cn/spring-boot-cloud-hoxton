@@ -27,10 +27,10 @@ public class ResourceServerConfigurerAdapterConfiguration extends ResourceServer
         expressionInterceptUrlRegistry.requestMatchers(testPassportAnt).permitAll();
 
         // 排除 登录模块 测试路径 需要 Token
-        NegatedRequestMatcher testPassportNegated = new NegatedRequestMatcher(testPassportAnt);
+        // NegatedRequestMatcher testPassportNegated = new NegatedRequestMatcher(testPassportAnt);
 
         // 其他路径 需要 Token
-        expressionInterceptUrlRegistry.requestMatchers(testPassportNegated).authenticated();
+        // expressionInterceptUrlRegistry.requestMatchers(testPassportNegated).authenticated();
 
     }
 

@@ -45,14 +45,14 @@ public class ResourceServerConfigurerAdapterConfiguration extends ResourceServer
         expressionInterceptUrlRegistry.requestMatchers(loginAnt, loginSuccessAnt, loginFailureAnt).permitAll();
 
         // 排除 登录请求（POST）的地址 需要Token
-        NegatedRequestMatcher loginNegated = new NegatedRequestMatcher(loginAnt);
+        // NegatedRequestMatcher loginNegated = new NegatedRequestMatcher(loginAnt);
         // 排除 登录成功的地址 需要Token
-        NegatedRequestMatcher loginSuccessNegated = new NegatedRequestMatcher(loginSuccessAnt);
+        // NegatedRequestMatcher loginSuccessNegated = new NegatedRequestMatcher(loginSuccessAnt);
         // 排除 登录失败的地址 需要Token
-        NegatedRequestMatcher loginFailureNegated = new NegatedRequestMatcher(loginFailureAnt);
+        // NegatedRequestMatcher loginFailureNegated = new NegatedRequestMatcher(loginFailureAnt);
         // 其他路径 需要Token
-        expressionInterceptUrlRegistry.requestMatchers(loginNegated, loginSuccessNegated, loginFailureNegated)
-                .authenticated();
+        // expressionInterceptUrlRegistry.requestMatchers(loginNegated, loginSuccessNegated, loginFailureNegated)
+        //        .authenticated();
 
         // 添加一个地址及权限（由于优先级的问题，至少存在一个此配置，才能正常配置 Security，否则 Security 无效）
         http.antMatcher("/test-scope/**")
