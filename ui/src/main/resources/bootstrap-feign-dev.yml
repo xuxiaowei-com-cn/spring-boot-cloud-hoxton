@@ -1,0 +1,5 @@
+#
+# Feign-开发配置
+feign:
+  hystrix:
+    enabled: true

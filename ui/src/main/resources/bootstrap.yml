@@ -6,8 +6,11 @@ spring:
     # 激活
     active:
       - cloud-dev # Cloud-开发配置
+      - datasource-dev # 数据源-开发配置
       # - eureka-dev # Eureka-开发配置（禁用 Eureka）
+      - feign-dev # Feign-开发配置
       - logging-dev # 日志-开发配置
+      - mybatis-plus-dev # MyBatis Plus-开发配置
       - nacos-dev # Nacos-开发配置
       - redis-dev # Redis-开发配置
       - seata-dev # seata-开发配置
