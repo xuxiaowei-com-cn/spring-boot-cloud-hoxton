@@ -27,8 +27,8 @@ public class TestRestController {
      */
     @RequestMapping("/echo")
     public String echo(HttpServletRequest request, HttpServletResponse response) {
-        String gray = request.getHeader("Gray");
-        return String.format("LocalAddr：%s，LocalPort：%s，Header Gray：%s",
+        String gray = request.getHeader("gray");
+        return String.format("LocalAddr：%s，LocalPort：%s，Header gray：%s",
                 request.getLocalAddr(), request.getLocalPort(), gray);
     }
 

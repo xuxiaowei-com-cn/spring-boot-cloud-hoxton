@@ -21,6 +21,6 @@ public interface TestPassportService {
      * @return 返回 灰度发布
      */
     @GetMapping("/test/echo")
-    String echo(@RequestHeader("Gray") String gray);
+    String echo(@RequestHeader("gray") String gray);
 
 }
