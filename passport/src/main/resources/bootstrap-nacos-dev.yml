@@ -5,3 +5,6 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:10121
+        metadata:
+          # 灰度发布
+          gray: false
