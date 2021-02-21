@@ -3,5 +3,8 @@
 spring:
   cloud:
     nacos:
+      config:
+        file-extension: yml
+        server-addr: localhost:10121
       discovery:
         server-addr: localhost:10121

@@ -5,9 +5,7 @@ spring:
   profiles:
     # 激活
     active:
-      - cloud-dev # Cloud-开发配置
       - datasource-dev # 数据源-开发配置
-      # - eureka-dev # Eureka-开发配置（禁用 Eureka）
       - logging-dev # 日志-开发配置
       - mybatis-plus-dev # MyBatis Plus-开发配置
       - nacos-dev # Nacos-开发配置
@@ -17,10 +15,3 @@ spring:
   application:
     # 在 Eureka Server 注册的服务名
     name: me
-  # 自动配置
-  autoconfigure:
-    # 排除
-    exclude:
-      # 排除自动配置，用于启用 Eureka、Nacos 双注册
-      - org.springframework.cloud.client.serviceregistry.ServiceRegistryAutoConfiguration
-      - org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationAutoConfiguration

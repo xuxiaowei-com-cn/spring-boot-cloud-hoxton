@@ -1,7 +1,0 @@
-#
-# Nacos-开发配置
-spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:10121

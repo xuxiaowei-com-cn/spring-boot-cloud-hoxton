@@ -28,14 +28,6 @@
     - Cloud Security
     - Cloud OAuth2
 
-- Spring Cloud Config
-    - Config Client
-        - 提供读取配置服务器中的配置
-
-- Spring Cloud Discovery
-    - Enable Discovery Client
-        - 提供 @EnableEurekaClient 注解
-
 - Alibaba
     - Nacos Service Discovery
 

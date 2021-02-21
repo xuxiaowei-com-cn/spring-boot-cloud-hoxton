@@ -1,9 +1,0 @@
-#
-# Hystrix-开发配置
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          # RequestContextHolder.getRequestAttributes() 不为空
-          strategy: SEMAPHORE
