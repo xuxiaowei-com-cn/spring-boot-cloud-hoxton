@@ -9,6 +9,7 @@ spring:
       - datasource-dev # 数据源-开发配置
       # - eureka-dev # Eureka-开发配置（禁用 Eureka）
       - feign-dev # Feign-开发配置
+      - hystrix-dev # Hystrix-开发配置
       - logging-dev # 日志-开发配置
       - mybatis-plus-dev # MyBatis Plus-开发配置
       - nacos-dev # Nacos-开发配置
