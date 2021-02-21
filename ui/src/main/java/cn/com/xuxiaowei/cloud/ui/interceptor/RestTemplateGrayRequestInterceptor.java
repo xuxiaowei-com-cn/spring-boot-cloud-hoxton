@@ -1,5 +1,6 @@
-package cn.com.xuxiaowei.cloud.ui.ribbon;
+package cn.com.xuxiaowei.cloud.ui.interceptor;
 
+import cn.com.xuxiaowei.cloud.ui.ribbon.RibbonRequestContextHolder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;

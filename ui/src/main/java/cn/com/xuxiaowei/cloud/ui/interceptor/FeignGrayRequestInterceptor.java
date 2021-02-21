@@ -1,5 +1,6 @@
-package cn.com.xuxiaowei.cloud.ui.ribbon;
+package cn.com.xuxiaowei.cloud.ui.interceptor;
 
+import cn.com.xuxiaowei.cloud.ui.ribbon.RibbonRequestContextHolder;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.springframework.cloud.openfeign.FeignClient;
