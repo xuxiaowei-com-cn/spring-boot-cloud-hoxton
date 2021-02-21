@@ -4,7 +4,6 @@ import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestMeHystrixService;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestPassportHystrixService;
 import cn.com.xuxiaowei.cloud.ui.test.service.ITestService;
-import com.baomidou.dynamic.datasource.annotation.DS;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +44,6 @@ public class TestServiceImpl implements ITestService {
      * @param testPassportMe 测试表
      * @return 返回 分布式事务 seata 结果
      */
-    @DS("master")
     @Override
     @GlobalTransactional
     @Transactional(rollbackFor = Exception.class)
