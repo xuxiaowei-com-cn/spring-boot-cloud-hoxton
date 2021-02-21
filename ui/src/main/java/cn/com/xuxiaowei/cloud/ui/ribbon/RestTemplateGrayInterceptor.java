@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author xuxiaowei
  * @since 0.0.1
  */
-public class GrayInterceptor implements ClientHttpRequestInterceptor {
+public class RestTemplateGrayInterceptor implements ClientHttpRequestInterceptor {
 
     /**
      * 用于请求时获取 header 并放入到线程中
