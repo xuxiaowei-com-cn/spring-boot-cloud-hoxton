@@ -36,6 +36,9 @@
     - Enable Discovery Client
         - 提供 @EnableEurekaClient 注解
 
+- Alibaba
+    - Nacos Service Discovery
+
 - Other
     - mybatis-plus-boot-starter
     - mybatis-plus-generator
