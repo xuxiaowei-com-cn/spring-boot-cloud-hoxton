@@ -23,7 +23,7 @@ public class RestTemplateConfiguration {
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
         List<ClientHttpRequestInterceptor> interceptors = restTemplate.getInterceptors();
-        interceptors.add(new RestTemplateGrayInterceptor());
+        interceptors.add(new RestTemplateGrayRequestInterceptor());
         return restTemplate;
     }
 
