@@ -17,6 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * UI(Ribbon、Feign)(界面模块) 程序执行入口
  * <p>
  * 通过 {@link EnableFeignClients} 开启 feign 客户端支持
+ * 通过 {@link EnableResourceServer} 开启资源保护
+ * 通过 {@link EnableFeignClients} 开启 feign 客户端支持
  * Spring Cloud 使用注解 {@link EnableEurekaClient} 的方式提供 Eureka 客户端（禁用 Eureka）
  * Spring Cloud 使用注解 {@link EnableConfigurationProperties#value()} 设置 {@link AutoServiceRegistrationProperties} 的方式提供 Nacos 客户端
  *
