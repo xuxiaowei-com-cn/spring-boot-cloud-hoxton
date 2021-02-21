@@ -1,5 +1,6 @@
-package cn.com.xuxiaowei.cloud.ui.ribbon;
+package cn.com.xuxiaowei.cloud.ui.configuration;
 
+import cn.com.xuxiaowei.cloud.ui.ribbon.RibbonRequestContextHolder;
 import com.alibaba.cloud.nacos.ribbon.NacosServer;
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractLoadBalancerRule;
@@ -19,7 +20,7 @@ import java.util.Random;
  * @since 0.0.1
  */
 @Configuration
-public class GrayLoadBalancerRule extends AbstractLoadBalancerRule {
+public class GrayLoadBalancerRuleConfiguration extends AbstractLoadBalancerRule {
 
     private final Random RANDOM = new Random();
 
