@@ -58,9 +58,6 @@ public class WebSecurityConfigurerAdapterConfiguration extends WebSecurityConfig
         this.corsConfigurationSource = corsConfigurationSource;
     }
 
-    /**
-     * @see super#configure(HttpSecurity)
-     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -118,6 +115,8 @@ public class WebSecurityConfigurerAdapterConfiguration extends WebSecurityConfig
 
     /**
      * 登录时查询用户
+     *
+     * @return 用户 JDBC
      */
     public JdbcDaoImpl jdbcDaoImpl() {
         JdbcDaoImpl jdbcDao = new JdbcDaoImpl();
