@@ -105,6 +105,14 @@ public class WebSecurityConfigurerAdapterConfiguration extends WebSecurityConfig
 
     }
 
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+
+        // 图标 资源 不拦截
+        web.ignoring().mvcMatchers("/favicon.ico");
+
+    }
+
     /**
      * 登录时查询用户
      */
