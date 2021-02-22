@@ -4,9 +4,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="cn.com.xuxiaowei.cloud.me.test.entity.Me">
-        <id column="me_id" property="iId" />
-        <result column="me_msg" property="meMsg" />
-        <result column="me_num" property="meNum" />
+        <id column="me_id" property="meId" />
         <result column="remark" property="remark" />
         <result column="create_username" property="createUsername" />
         <result column="update_username" property="updateUsername" />
@@ -15,6 +13,8 @@
         <result column="create_date" property="createDate" />
         <result column="update_date" property="updateDate" />
         <result column="deleted" property="deleted" />
+        <result column="me_msg" property="meMsg" />
+        <result column="me_num" property="meNum" />
     </resultMap>
 
 </mapper>
