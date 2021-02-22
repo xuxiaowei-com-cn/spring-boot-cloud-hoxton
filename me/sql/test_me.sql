@@ -22,7 +22,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `test_me`;
 CREATE TABLE `test_me`  (
-  `me_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '登录模块测试表主键',
+  `me_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户模块测试表主键',
   `me_msg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '消息',
   `me_num` int(11) NULL DEFAULT NULL COMMENT '数量',
   `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '备注',
