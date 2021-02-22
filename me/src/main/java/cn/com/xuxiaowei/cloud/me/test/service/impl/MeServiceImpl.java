@@ -1,11 +1,14 @@
 package cn.com.xuxiaowei.cloud.me.test.service.impl;
 
+import cn.com.xuxiaowei.cloud.me.test.dto.MeDTO;
 import cn.com.xuxiaowei.cloud.me.test.entity.MeDO;
 import cn.com.xuxiaowei.cloud.me.test.mapper.MeMapper;
 import cn.com.xuxiaowei.cloud.me.test.service.IMeService;
+import cn.com.xuxiaowei.cloud.me.test.vo.MeVO;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.core.context.RootContext;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,20 +28,26 @@ public class MeServiceImpl extends ServiceImpl<MeMapper, MeDO> implements IMeSer
     /**
      * 保存-分布式事务
      *
-     * @param entity 用户模块测试表
+     * @param meDTO 用户模块测试表
      * @return 返回 保存结果
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-    public boolean saveSeata(MeDO entity) {
+    public MeVO saveSeata(MeDTO meDTO) {
 
         log.info("当前 XID: {}", RootContext.getXID());
 
-        boolean save = save(entity);
+        MeDO meDO = new MeDO();
+        BeanUtils.copyProperties(meDTO, meDO);
 
-        int i = 1 / entity.getMeNum();
+        save(meDO);
 
-        return save;
+        int i = 1 / meDO.getMeNum();
+
+        MeVO meVO = new MeVO();
+        BeanUtils.copyProperties(meDO, meVO);
+
+        return meVO;
     }
 
 }

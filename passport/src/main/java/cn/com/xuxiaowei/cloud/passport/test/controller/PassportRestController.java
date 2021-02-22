@@ -1,8 +1,9 @@
 package cn.com.xuxiaowei.cloud.passport.test.controller;
 
 
-import cn.com.xuxiaowei.cloud.passport.test.entity.PassportDO;
+import cn.com.xuxiaowei.cloud.passport.test.dto.PassportDTO;
 import cn.com.xuxiaowei.cloud.passport.test.service.IPassportService;
+import cn.com.xuxiaowei.cloud.passport.test.vo.PassportVO;
 import cn.com.xuxiaowei.cloud.passport.utils.RequestUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,15 +40,15 @@ public class PassportRestController {
     /**
      * 测试 参数接收、保存数据
      *
-     * @param request  请求
-     * @param response 响应
-     * @param session  session
-     * @param passport 登录模块测试表
+     * @param request     请求
+     * @param response    响应
+     * @param session     session
+     * @param passportDTO 登录模块测试表
      * @return 返回 测试结果
      */
     @RequestMapping("/save")
     public Map<String, Object> save(HttpServletRequest request, HttpServletResponse response, HttpSession session,
-                                    @RequestBody PassportDO passport) {
+                                    @RequestBody PassportDTO passportDTO) {
 
         Map<String, String> headerMap = RequestUtils.getHeaderMap(request);
         log.info(String.valueOf(headerMap));
@@ -56,15 +57,15 @@ public class PassportRestController {
         Map<String, Object> data = new HashMap<>(4);
         map.put("data", data);
 
-        passport.setCreateUsername("xxw");
-        passport.setCreateIp(request.getRemoteHost());
+        passportDTO.setCreateUsername("xxw");
+        passportDTO.setCreateIp(request.getRemoteHost());
 
-        passportService.saveSeata(passport);
+        PassportVO passportVO = passportService.saveSeata(passportDTO);
 
         map.put("code", "00000");
         map.put("msg", "保存成功");
         map.put("Passport Session ID", session.getId());
-        data.put("passport", passport);
+        data.put("passportVO", passportVO);
 
         return map;
     }
