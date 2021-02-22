@@ -4,7 +4,6 @@ import cn.com.xuxiaowei.cloud.ui.ribbon.RibbonRequestContextHolder;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -16,7 +15,6 @@ import java.util.Map;
  * @author xuxiaowei
  * @since 0.0.1
  */
-@Configuration
 public class FeignGrayRequestInterceptor implements RequestInterceptor {
 
     @Override
