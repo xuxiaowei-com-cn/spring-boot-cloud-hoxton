@@ -2,6 +2,9 @@
 
 ## [seata](https://github.com/seata/seata)
 
+- Version
+    - 1.4.0
+
 - 事务模式
     - [Seata AT 模式](https://seata.io/zh-cn/docs/dev/mode/at-mode.html)
     - [动态数据源：Seata事务](https://dynamic-datasource.com/guide/tx/Seata.html)
