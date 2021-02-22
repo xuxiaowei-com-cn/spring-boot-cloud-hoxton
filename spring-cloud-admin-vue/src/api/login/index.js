@@ -7,7 +7,7 @@ import request from '../../utils/request'
  */
 export function login(params) {
     return request({
-        url: 'http://localhost:10401/login',
+        url: 'http://localhost:10101/login',
         method: 'post',
         params: params
     })

@@ -21,12 +21,12 @@ import javax.sql.DataSource;
  * OAuth2 配置
  *
  * @author xuxiaowei
- * @see <a href="http://localhost:10601/oauth/authorize?client_id=xuxiaowei_client&redirect_uri=http://127.0.0.1:123&response_type=code&scope=snsapi_base&state=beff3dfc-bad8-40db-b25f-e5459e3d6ad7">获取 code</a>
- * @see <a href="http://localhost:10601/oauth/token?code=&client_id=xuxiaowei_client&client_secret=123&redirect_uri=http://127.0.0.1:123&grant_type=authorization_code">获取 Token</a>
- * @see <a href="http://127.0.0.1:10601/oauth/token?code=&client_id=xuxiaowei_client&client_secret=123&redirect_uri=http://127.0.0.1:123&grant_type=authorization_code">获取 Token</a>
- * @see <a href="http://localhost:10601/oauth/check_token?token=">检查 Token</a>
- * @see <a href="http://127.0.0.1:10601/oauth/check_token?token=">检查 Token</a>
- * @see <a href="http://localhost:10601/oauth/token?refresh_token=&client_id=xuxiaowei_client&client_secret=123&grant_type=refresh_token">刷新 Token</a>
+ * @see <a href="http://localhost:10301/oauth/authorize?client_id=xuxiaowei_client&redirect_uri=http://127.0.0.1:123&response_type=code&scope=snsapi_base&state=beff3dfc-bad8-40db-b25f-e5459e3d6ad7">获取 code</a>
+ * @see <a href="http://localhost:10301/oauth/token?code=&client_id=xuxiaowei_client&client_secret=123&redirect_uri=http://127.0.0.1:123&grant_type=authorization_code">获取 Token</a>
+ * @see <a href="http://127.0.0.1:10301/oauth/token?code=&client_id=xuxiaowei_client&client_secret=123&redirect_uri=http://127.0.0.1:123&grant_type=authorization_code">获取 Token</a>
+ * @see <a href="http://localhost:10301/oauth/check_token?token=">检查 Token</a>
+ * @see <a href="http://127.0.0.1:10301/oauth/check_token?token=">检查 Token</a>
+ * @see <a href="http://localhost:10301/oauth/token?refresh_token=&client_id=xuxiaowei_client&client_secret=123&grant_type=refresh_token">刷新 Token</a>
  * @since 0.0.1
  */
 @Configuration
