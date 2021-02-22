@@ -86,7 +86,7 @@ public class TestPassportRestController {
         HeadersUtils.add(request, headers);
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
-        return restTemplate.exchange("http://me/test/echo", HttpMethod.GET, entity, String.class).getBody();
+        return restTemplate.exchange("http://passport/test/echo", HttpMethod.GET, entity, String.class).getBody();
     }
 
     /**
