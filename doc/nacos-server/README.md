@@ -2,3 +2,5 @@
 
 ## [nacos](https://github.com/alibaba/nacos)
 
+- SQL
+    - /conf/nacos-mysql.sql
