@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.me.test.mapper;
 
-import cn.com.xuxiaowei.cloud.me.test.entity.Me;
+import cn.com.xuxiaowei.cloud.me.test.entity.MeDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author 徐晓伟
  * @since 2021-02-21
  */
-public interface MeMapper extends BaseMapper<Me> {
+public interface MeMapper extends BaseMapper<MeDO> {
 
 }

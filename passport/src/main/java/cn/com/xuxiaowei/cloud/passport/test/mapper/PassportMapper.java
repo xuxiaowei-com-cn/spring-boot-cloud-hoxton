@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.passport.test.mapper;
 
-import cn.com.xuxiaowei.cloud.passport.test.entity.Passport;
+import cn.com.xuxiaowei.cloud.passport.test.entity.PassportDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author 徐晓伟
- * @since 2021-02-21
+ * @since 2021-02-22
  */
-public interface PassportMapper extends BaseMapper<Passport> {
+public interface PassportMapper extends BaseMapper<PassportDO> {
 
 }

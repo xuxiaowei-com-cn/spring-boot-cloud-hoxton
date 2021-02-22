@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.me.test.service;
 
-import cn.com.xuxiaowei.cloud.me.test.entity.Me;
+import cn.com.xuxiaowei.cloud.me.test.entity.MeDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author 徐晓伟
  * @since 2021-02-21
  */
-public interface IMeService extends IService<Me> {
+public interface IMeService extends IService<MeDO> {
 
     /**
      * 保存-分布式事务
@@ -19,6 +19,6 @@ public interface IMeService extends IService<Me> {
      * @param entity 用户模块测试表
      * @return 返回 保存结果
      */
-    boolean saveSeata(Me entity);
+    boolean saveSeata(MeDO entity);
 
 }

@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.me.test.service.impl;
 
-import cn.com.xuxiaowei.cloud.me.test.entity.Me;
+import cn.com.xuxiaowei.cloud.me.test.entity.MeDO;
 import cn.com.xuxiaowei.cloud.me.test.mapper.MeMapper;
 import cn.com.xuxiaowei.cloud.me.test.service.IMeService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Slf4j
 @Service
-public class MeServiceImpl extends ServiceImpl<MeMapper, Me> implements IMeService {
+public class MeServiceImpl extends ServiceImpl<MeMapper, MeDO> implements IMeService {
 
     /**
      * 保存-分布式事务
@@ -30,7 +30,7 @@ public class MeServiceImpl extends ServiceImpl<MeMapper, Me> implements IMeServi
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-    public boolean saveSeata(Me entity) {
+    public boolean saveSeata(MeDO entity) {
 
         log.info("当前 XID: {}", RootContext.getXID());
 

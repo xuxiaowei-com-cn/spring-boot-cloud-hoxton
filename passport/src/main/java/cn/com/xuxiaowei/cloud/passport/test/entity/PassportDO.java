@@ -15,13 +15,13 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author 徐晓伟
- * @since 2021-02-21
+ * @since 2021-02-22
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName("test_passport")
-public class Passport extends Entity {
+public class PassportDO extends Entity {
 
     private static final long serialVersionUID = 1L;
 
@@ -49,6 +49,5 @@ public class Passport extends Entity {
     public static final String PASSPORT_MSG = "passport_msg";
 
     public static final String PASSPORT_NUM = "passport_num";
-
 
 }

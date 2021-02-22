@@ -3,7 +3,7 @@
 <mapper namespace="cn.com.xuxiaowei.cloud.me.test.mapper.MeMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.com.xuxiaowei.cloud.me.test.entity.Me">
+    <resultMap id="BaseResultMap" type="cn.com.xuxiaowei.cloud.me.test.entity.MeDO">
         <id column="me_id" property="meId" />
         <result column="remark" property="remark" />
         <result column="create_username" property="createUsername" />

@@ -3,10 +3,8 @@
 <mapper namespace="cn.com.xuxiaowei.cloud.passport.test.mapper.PassportMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.com.xuxiaowei.cloud.passport.test.entity.Passport">
+    <resultMap id="BaseResultMap" type="cn.com.xuxiaowei.cloud.passport.test.entity.PassportDO">
         <id column="passport_id" property="passportId" />
-        <result column="passport_msg" property="passportMsg" />
-        <result column="passport_num" property="passportNum" />
         <result column="remark" property="remark" />
         <result column="create_username" property="createUsername" />
         <result column="update_username" property="updateUsername" />
@@ -15,6 +13,8 @@
         <result column="create_date" property="createDate" />
         <result column="update_date" property="updateDate" />
         <result column="deleted" property="deleted" />
+        <result column="passport_msg" property="passportMsg" />
+        <result column="passport_num" property="passportNum" />
     </resultMap>
 
 </mapper>

@@ -9,20 +9,19 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-
 /**
  * <p>
  * 用户模块测试表
  * </p>
  *
  * @author 徐晓伟
- * @since 2021-02-21
+ * @since 2021-02-22
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName("test_me")
-public class Me extends Entity {
+public class MeDO extends Entity {
 
     private static final long serialVersionUID = 1L;
 

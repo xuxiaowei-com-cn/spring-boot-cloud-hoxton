@@ -13,10 +13,7 @@ import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
 import lombok.Data;
 import org.apache.commons.lang.StringUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 /**
  * MyBatis Plus 代码生成器
@@ -258,7 +255,18 @@ public class MyBatisPlusGenerator {
         // 模板引擎
         // FreemarkerTemplateEngine
         // VelocityTemplateEngine
-        autoGenerator.setTemplateEngine(new VelocityTemplateEngine());
+        autoGenerator.setTemplateEngine(new VelocityTemplateEngine() {
+            @Override
+            public Map<String, Object> getObjectMap(TableInfo tableInfo) {
+                Map<String, Object> objectMap = super.getObjectMap(tableInfo);
+                // 取消 Controller RequestMapping -do 后缀名
+                String controllerMappingHyphen = "controllerMappingHyphen";
+                String controllerMappingHyphenValue = objectMap.get("controllerMappingHyphen").toString();
+                objectMap.put(controllerMappingHyphen, controllerMappingHyphenValue.substring(0,
+                        controllerMappingHyphenValue.length() - 3));
+                return objectMap;
+            }
+        });
 
         // 生成代码
         autoGenerator.execute();
@@ -286,7 +294,9 @@ public class MyBatisPlusGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return getMapper() + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
+                // 取消 Mapper XML DO 后缀名
+                String entityName = tableInfo.getEntityName();
+                return getMapper() + "/" + entityName.substring(0, entityName.length() - 2) + "Mapper" + StringPool.DOT_XML;
             }
         });
 
@@ -362,6 +372,9 @@ public class MyBatisPlusGenerator {
 
         // 设置 Controller 名
         globalConfig.setControllerName(controllerName);
+
+        // 设置 Entity 后缀名
+        globalConfig.setEntityName("%sDO");
 
         return globalConfig;
     }

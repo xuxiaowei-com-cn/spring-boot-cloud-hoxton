@@ -1,7 +1,7 @@
 package cn.com.xuxiaowei.cloud.me.test.controller;
 
 
-import cn.com.xuxiaowei.cloud.me.test.entity.Me;
+import cn.com.xuxiaowei.cloud.me.test.entity.MeDO;
 import cn.com.xuxiaowei.cloud.me.test.service.IMeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,7 +44,7 @@ public class MeRestController {
      */
     @RequestMapping("/save")
     public Map<String, Object> save(HttpServletRequest request, HttpServletResponse response, HttpSession session,
-                                    @RequestBody Me me) {
+                                    @RequestBody MeDO me) {
 
         Map<String, Object> map = new HashMap<>(4);
         Map<String, Object> data = new HashMap<>(4);

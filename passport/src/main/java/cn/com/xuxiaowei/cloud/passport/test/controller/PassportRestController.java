@@ -1,7 +1,7 @@
 package cn.com.xuxiaowei.cloud.passport.test.controller;
 
 
-import cn.com.xuxiaowei.cloud.passport.test.entity.Passport;
+import cn.com.xuxiaowei.cloud.passport.test.entity.PassportDO;
 import cn.com.xuxiaowei.cloud.passport.test.service.IPassportService;
 import cn.com.xuxiaowei.cloud.passport.utils.RequestUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -47,7 +47,7 @@ public class PassportRestController {
      */
     @RequestMapping("/save")
     public Map<String, Object> save(HttpServletRequest request, HttpServletResponse response, HttpSession session,
-                                    @RequestBody Passport passport) {
+                                    @RequestBody PassportDO passport) {
 
         Map<String, String> headerMap = RequestUtils.getHeaderMap(request);
         log.info(String.valueOf(headerMap));
