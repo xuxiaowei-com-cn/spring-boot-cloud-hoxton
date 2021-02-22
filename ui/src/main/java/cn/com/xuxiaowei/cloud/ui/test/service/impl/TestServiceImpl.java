@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.ui.test.service.impl;
 
-import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
+import cn.com.xuxiaowei.cloud.ui.test.dto.TestPassportMeDTO;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestMeHystrixService;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestPassportHystrixService;
 import cn.com.xuxiaowei.cloud.ui.test.service.ITestService;
@@ -41,20 +41,20 @@ public class TestServiceImpl implements ITestService {
     /**
      * 测试 分布式事务 seata
      *
-     * @param testPassportMe 测试表
+     * @param testPassportMeDTO 测试表
      * @return 返回 分布式事务 seata 结果
      */
     @Override
     @GlobalTransactional
     @Transactional(rollbackFor = Exception.class)
-    public Map<String, Object> saveSeata(TestPassportMe testPassportMe) {
+    public Map<String, Object> saveSeata(TestPassportMeDTO testPassportMeDTO) {
 
         log.info("当前 XID: {}", RootContext.getXID());
 
         Map<String, Object> map = new HashMap<>(4);
 
-        Map<String, Object> saveMe = testMeHystrixService.save(testPassportMe);
-        Map<String, Object> savePassport = testPassportHystrixService.save(testPassportMe);
+        Map<String, Object> saveMe = testMeHystrixService.save(testPassportMeDTO);
+        Map<String, Object> savePassport = testPassportHystrixService.save(testPassportMeDTO);
 
         map.put("code", "00000");
         map.put("msg", "保存成功");

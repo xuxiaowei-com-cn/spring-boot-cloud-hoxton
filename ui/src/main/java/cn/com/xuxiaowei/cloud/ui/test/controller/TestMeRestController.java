@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.ui.test.controller;
 
-import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
+import cn.com.xuxiaowei.cloud.ui.test.dto.TestPassportMeDTO;
 import cn.com.xuxiaowei.cloud.ui.test.hystrix.TestMeHystrixService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,16 +35,16 @@ public class TestMeRestController {
     /**
      * 测试 用户模块 参数接收、保存数据 接口
      *
-     * @param request       请求
-     * @param response      响应
-     * @param session       session
-     * @param testPassportMe 用户模块测试表，必填，否则调用失败
+     * @param request           请求
+     * @param response          响应
+     * @param session           session
+     * @param testPassportMeDTO 用户模块测试表，必填，否则调用失败
      * @return 返回 测试 用户模块 结果
      */
     @RequestMapping(value = "/save")
     public Map<String, Object> save(HttpServletRequest request, HttpServletResponse response, HttpSession session,
-                                    @RequestBody TestPassportMe testPassportMe) {
-        return testMeHystrixService.save(testPassportMe);
+                                    @RequestBody TestPassportMeDTO testPassportMeDTO) {
+        return testMeHystrixService.save(testPassportMeDTO);
     }
 
 }

@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.cloud.ui.test.entity;
+package cn.com.xuxiaowei.cloud.ui.test.dto;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -15,7 +15,7 @@ import java.io.Serializable;
  */
 @Data
 @Accessors(chain = true)
-public class TestPassportMe implements Serializable {
+public class TestPassportMeDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

@@ -1,6 +1,6 @@
 package cn.com.xuxiaowei.cloud.ui.test.hystrix;
 
-import cn.com.xuxiaowei.cloud.ui.test.entity.TestPassportMe;
+import cn.com.xuxiaowei.cloud.ui.test.dto.TestPassportMeDTO;
 import cn.com.xuxiaowei.cloud.ui.test.exception.TestPassportException;
 import cn.com.xuxiaowei.cloud.ui.test.feign.TestPassportService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -51,22 +51,22 @@ public class TestPassportHystrixService {
     /**
      * 测试 登录模块 参数接收、保存数据 服务实现
      *
-     * @param testPassportMe 登录模块测试表，必填，否则调用失败
+     * @param testPassportMeDTO 登录模块测试表，必填，否则调用失败
      * @return 返回 测试 登录模块 结果
      */
     @HystrixCommand(fallbackMethod = "saveFallback")
-    public Map<String, Object> save(TestPassportMe testPassportMe) {
-        return testPassportService.save(testPassportMe);
+    public Map<String, Object> save(TestPassportMeDTO testPassportMeDTO) {
+        return testPassportService.save(testPassportMeDTO);
     }
 
     /**
      * 测试 登录模块 参数接收、保存数据 异常数据
      *
-     * @param testPassportMe 登录模块测试表
+     * @param testPassportMeDTO 登录模块测试表
      * @return 返回 异常 结果
      * @throws TestPassportException 测试登录模块 异常
      */
-    public Map<String, Object> saveFallback(TestPassportMe testPassportMe) throws TestPassportException {
+    public Map<String, Object> saveFallback(TestPassportMeDTO testPassportMeDTO) throws TestPassportException {
         throw new TestPassportException("A0001", "登录模块故障");
     }
 
