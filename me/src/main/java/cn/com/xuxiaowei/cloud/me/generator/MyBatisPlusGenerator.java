@@ -16,6 +16,7 @@ import org.apache.commons.lang.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * MyBatis Plus 代码生成器
@@ -408,6 +409,12 @@ public class MyBatisPlusGenerator {
 
         // 自定义继承的Entity类全称，带包名
         strategyConfig.setSuperEntityClass(superEntityClass);
+
+        // 自定义基础的Entity类，公共字段
+        Set<String> superEntityColumns = strategyConfig.getSuperEntityColumns();
+        for (String superEntityColumn : superEntityColumns) {
+            strategyConfig.setSuperEntityColumns(superEntityColumn);
+        }
 
         // 【实体】是否为lombok模型（默认 false）
         strategyConfig.setEntityLombokModel(true);
