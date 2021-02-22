@@ -1,6 +1,7 @@
 package cn.com.xuxiaowei.cloud.ui.test.dto;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.io.Serializable;
  * @since 2021-01-19
  */
 @Data
+@EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 public class TestPassportMeDTO implements Serializable {
 
