@@ -9,8 +9,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
  * 资源服务器 配置
  *
  * @author xuxiaowei
- * @see <a href="http://127.0.0.1:10301/sns/userinfo?access_token=">访问资源</a>
- * @see <a href="http://localhost:10301/sns/userinfo?access_token=">访问资源</a>
+ * @see <a href="http://127.0.0.1:10401/sns/userinfo?access_token=">访问资源</a>
+ * @see <a href="http://localhost:10401/sns/userinfo?access_token=">访问资源</a>
  * @since 0.0.1
  */
 @Configuration

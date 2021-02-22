@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:10121
+        server-addr: localhost:10101
         metadata:
           # 灰度发布
           gray: false

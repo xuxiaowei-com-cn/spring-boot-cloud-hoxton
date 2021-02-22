@@ -39,6 +39,6 @@ CREATE TABLE `oauth_client_details`  (
 -- ----------------------------
 -- Records of oauth_client_details
 -- ----------------------------
-INSERT INTO `oauth_client_details` VALUES ('xuxiaowei_client', '{bcrypt}$2a$10$nDGmklGtTcL/AWNisIqgJ.p8z0teas89FhMAGdVSNlQxR/uMG/ZrS', NULL, 'snsapi_base,snsapi_userinfo', 'authorization_code,refresh_token', 'http://localhost:10301/oauth/auto/authorize', null, NULL, NULL, NULL, 'snsapi_base');
+INSERT INTO `oauth_client_details` VALUES ('xuxiaowei_client', '{bcrypt}$2a$10$nDGmklGtTcL/AWNisIqgJ.p8z0teas89FhMAGdVSNlQxR/uMG/ZrS', NULL, 'snsapi_base,snsapi_userinfo', 'authorization_code,refresh_token', 'http://localhost:10401/oauth/auto/authorize', null, NULL, NULL, NULL, 'snsapi_base');
 
 SET FOREIGN_KEY_CHECKS = 1;

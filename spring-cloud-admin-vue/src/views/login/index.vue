@@ -50,7 +50,7 @@ import {login} from '../../api/login'
 // 获取当前示例
 const {ctx} = getCurrentInstance()
 
-const patchcaSrc = ref('http://localhost:10101/patchca')
+const patchcaSrc = ref('http://localhost:10201/patchca')
 
 // 登录参数
 const loginForm = reactive({
