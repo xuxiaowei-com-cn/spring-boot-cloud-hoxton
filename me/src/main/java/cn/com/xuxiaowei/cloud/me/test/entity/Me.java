@@ -27,7 +27,7 @@ public class Me extends Entity {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 登录模块测试表主键
+     * 用户模块测试表主键
      */
     @TableId(value = "me_id", type = IdType.AUTO)
     private Long meId;
