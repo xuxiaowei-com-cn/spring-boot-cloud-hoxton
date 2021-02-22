@@ -93,7 +93,7 @@ public class MyBatisPlusGenerator {
     /**
      * 逻辑删除属性名称
      */
-    private String logicDeleteFieldName = "deleted";
+    private String logicDeleteFieldName = "DELETED";
 
     /**
      * 默认模块名
