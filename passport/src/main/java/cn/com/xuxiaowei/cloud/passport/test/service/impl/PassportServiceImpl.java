@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.UUID;
+
 /**
  * <p>
  * 登录模块测试表 服务实现类
@@ -48,6 +50,18 @@ public class PassportServiceImpl extends ServiceImpl<PassportMapper, PassportDO>
         BeanUtils.copyProperties(passportDO, passportVO);
 
         return passportVO;
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+    public boolean updateByIdSeata(PassportDTO entity) {
+
+        int i = 1 / entity.getPassportNum();
+
+        PassportDO entity2 = new PassportDO();
+        entity2.setPassportId(1L);
+        entity2.setPassportMsg(UUID.randomUUID().toString());
+        return updateById(entity2);
     }
 
 }

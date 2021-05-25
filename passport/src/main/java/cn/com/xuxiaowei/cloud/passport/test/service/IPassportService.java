@@ -23,4 +23,6 @@ public interface IPassportService extends IService<PassportDO> {
      */
     PassportVO saveSeata(PassportDTO passportDTO);
 
+    boolean updateByIdSeata(PassportDTO entity);
+
 }

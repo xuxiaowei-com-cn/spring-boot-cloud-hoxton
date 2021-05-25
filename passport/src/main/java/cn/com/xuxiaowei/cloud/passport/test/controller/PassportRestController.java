@@ -60,7 +60,9 @@ public class PassportRestController {
         passportDTO.setCreateUsername("xxw");
         passportDTO.setCreateIp(request.getRemoteHost());
 
-        PassportVO passportVO = passportService.saveSeata(passportDTO);
+//        PassportVO passportVO = passportService.saveSeata(passportDTO);
+
+        boolean passportVO = passportService.updateByIdSeata(passportDTO);
 
         map.put("code", "00000");
         map.put("msg", "保存成功");
